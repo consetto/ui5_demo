@@ -1,0 +1,156 @@
+<mvc:View controllerName="sap.ui.demo.toolpageapp.controller.Launchpad" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Page title="{i18n>title}">
+		<layout:VerticalLayout class="sapUiResponsiveMargin">
+			<!--*******************************************************************************************************-->
+			<!-- Group: Finance -->
+			<Title titleStyle="H2" text="{i18n>finance}" class="sapUiTinyMarginBegin sapUiMediumMarginTop"/>
+			<layout:HorizontalLayout allowWrapping="true">
+				<!--Forecast demo -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>predictiveForecast}" subheader="{i18n>planning}"
+					press="onNavToPredictiveForecast">
+					<tileContent>
+						<TileContent unit="EUR" footer="EXPENSES">
+							<content>
+								<NumericContent scale="€" value="44 M"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!-- Financial Dashboard -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>financialDashboard}" press="onNavToFinancialDashboard"
+					subheader="{i18n>analytics}">
+					<TileContent unit="EUR" footer="NET PROFIT">
+						<NumericContent scale="M" value="97.9" valueColor="Error" indicator="Down"/>
+					</TileContent>
+				</GenericTile>
+			</layout:HorizontalLayout>
+			<!--*******************************************************************************************************-->
+			<!-- Group: Human Resources -->
+			<Title titleStyle="H2" text="{i18n>humanResources}" class="sapUiTinyMarginBegin sapUiMediumMarginTop"/>
+			<layout:HorizontalLayout allowWrapping="true">
+				<!-- Process Flow -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>processFlow}" subheader="{i18n>processFlowSubHeader}"
+					press="onNavToProcessFlow2">
+					<tileContent>
+						<TileContent>
+							<content>
+								<NumericContent value="6" indicator="None" valueColor="Neutral"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!-- Process Flow 3 -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>processFlow}" subheader="{i18n>processFlow3SubHeader}"
+					press="onNavToProcessFlow3"></GenericTile>
+				<!-- Planning calendar -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>planningCalendar}" press="onNavToPlanningCalendar">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://appointment"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!--Organizational Chart-->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>organizationalChart}"
+					subheader="{i18n>organizationalChartSubHeader}" press="onNavToOrganizationalChart">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://crm-service-manager"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!--Project Management-->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>projectManagement}" subheader="{i18n>projectManagementSubHeader}"
+					press="onNavToProjectManagement">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://crm-sales"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!--Reviews-->
+				<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>startpageUserReviewsTileTitle}" press="onNavToReviews">
+					<tileContent>
+						<TileContent>
+							<content>
+								<NumericContent value="{ path: 'reviews>/UserReviews', formatter: '.getEntityCount' }" indicator="None" valueColor="Neutral"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>-->
+			</layout:HorizontalLayout>
+			<!--*******************************************************************************************************-->
+			<!-- Group: Production -->
+			<Title titleStyle="H2" text="{i18n>product}" class="sapUiTinyMarginBegin sapUiMediumMarginTop"/>
+			<layout:HorizontalLayout allowWrapping="true">
+				<!-- Production process -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>startpagePFTileTitle}" subheader="{i18n>startpagePFTileSubTitle}"
+					press="onNavToProcessFlow">
+					<tileContent>
+						<TileContent>
+							<content>
+								<NumericContent scale="%" value="{ path: 'process>/Nodes', formatter: '.getProgress' }" icon="sap-icon://factory"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!-- Product OV1 -->
+<!--				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>productOv1}" press="onNavToProductOv1">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://product"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>-->
+				<!-- Product OV2 -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>productOv2}" press="onNavToProductOv2">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://add-product"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<!-- Product OV3 -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>productOv3}" press="onNavToProductOv3">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://basket"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+			</layout:HorizontalLayout>
+			<!--*******************************************************************************************************-->
+			<!-- Group: Logistics -->
+			<Title titleStyle="H2" text="{i18n>logistic}" class="sapUiTinyMarginBegin sapUiMediumMarginTop"/>
+			<layout:HorizontalLayout allowWrapping="true">
+				<!-- Delivery Route -->
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{i18n>deliveryRoute}" press="onNavToDeliveryRoute">
+					<tileContent>
+						<TileContent>
+							<content>
+								<ImageContent src="sap-icon://subway-train"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+			</layout:HorizontalLayout>
+			<Title titleStyle="H2" text="{i18n>links}" class="sapUiTinyMarginBegin sapUiMediumMarginTop"/>
+			<layout:HorizontalLayout allowWrapping="true">
+				<GenericTile header="{i18n>linkConsetto}" mode="LineMode" press="onNavToEntrepriseApp" class="sapUiTinyMarginBegin"/>
+			</layout:HorizontalLayout>
+		</layout:VerticalLayout>
+	</Page>
+</mvc:View>

@@ -1,0 +1,29 @@
+{
+	"News": [
+		{
+			"content": "Enterprise applications",
+			"subheader": "SAPUI5 and Fiori apps",
+			"date1": "2016-12-07T09:42:32.910Z",
+			"image": "images/finance.jpg"
+		},
+		{
+			"content": "Machine Learning",
+			"subheader": "Smart business software",
+			"date1": "2016-12-07T09:42:32.910Z",
+			"image": "images/finance.jpg"
+		},
+		{
+			"content": "Enterprise Planning",
+			"subheader": "Planning solutions with SAP",
+			"date1": "2016-12-07T09:42:32.910Z",
+			"image": "images/finance.jpg"
+		},
+		{
+			"content": "Voice Applications",
+			"subheader": "Amazon Alexa for business",
+			"date1": "2016-12-06T00:00:00.000Z",
+			"image": "images/finance.jpg",
+			"state1": "Loading"
+		}
+	]
+}

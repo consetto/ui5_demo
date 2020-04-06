@@ -1,0 +1,133 @@
+{
+	"points": [
+		{"x": 0, "y": 35},
+		{"x": 8, "y": 53},
+		{"x": 20, "y": 10},
+		{"x": 30, "y": 30},
+		{"x": 40, "y": 52},
+		{"x": 100, "y": 73}
+	],
+	"size": "Responsive",
+	"threshold": 40,
+	"chartTwoColors": {
+		"showPoints": true,
+		"color": {"above": "Good", "below": "Error"}
+	},
+	"chartNoThreshold": {
+		"threshold": null,
+		"showPoints": true,
+		"color": {"above": "Good", "below": "Critical"}
+	},
+	"chartSemanticColor": {
+		"threshold": null,
+		"showPoints": false,
+		"color": "Error"
+	},
+	"chartEmphasizedPointsNoThreshold": {
+		"points": [
+			{"x": 0, "y": 35, "show": true, "color": "Good"},
+			{"x": 8, "y": 53},
+			{"x": 20, "y": 10},
+			{"x": 30, "y": 30},
+			{"x": 40, "y": 52},
+			{"x": 100, "y": 73, "show": true, "color": "Error"}
+		],
+		"threshold": null,
+		"leftTopLabel": "120 Mio",
+		"rightTopLabel": "140 Mio",
+		"leftBottomLabel": "Sep 2017",
+		"rightBottomLabel": "Oct 2017"
+	},
+	"chartOneEmphasizedPoint": {
+		"points": [
+			{"x": 0, "y": 35},
+			{"x": 8, "y": 53},
+			{"x": 20, "y": 10},
+			{"x": 30, "y": 30},
+			{"x": 40, "y": 52},
+			{"x": 100, "y": 73, "color": "Error", "show": true}
+		]
+	}
+}
+
+<layout:Splitter >
+			<l:HorizontalLayout id="tablLong">
+				<!--3 cercles-->
+				<m:GenericTile press="press" header="Core KPIs" subheader="" frameType="TwoByOne">
+					<m:tileContent>
+						<m:TileContent footer="Gross Profit Margin">
+							<m:content>
+								<mi:RadialMicroChart percentage="82" valueColor="Good"/>
+							</m:content>
+						</m:TileContent>
+						<m:TileContent footer="EBIT Margin">
+							<m:content>
+								<mi:RadialMicroChart percentage="17" valueColor="Neutral"/>
+							</m:content>
+						</m:TileContent>
+					</m:tileContent>
+				</m:GenericTile>
+				<!--3 cercles-->
+				<GenericTile header="Revenue Trend" subheader="" frameType="OneByOne" press="press" class="sapUiTinyMargin">
+					<TileContent>
+						<mc:LineMicroChart threshold="{/chartEmphasizedPointsNoThreshold/threshold}" size="{/size}"
+							leftTopLabel="{/chartEmphasizedPointsNoThreshold/leftTopLabel}" leftBottomLabel="{/chartEmphasizedPointsNoThreshold/leftBottomLabel}"
+							rightTopLabel="{/chartEmphasizedPointsNoThreshold/rightTopLabel}" rightBottomLabel="{/chartEmphasizedPointsNoThreshold/rightBottomLabel}"
+							class="sapUiSmallMargin" points="{ path: '/chartEmphasizedPointsNoThreshold/points', templateShareable: 'true' }">
+							<mc:LineMicroChartEmphasizedPoint x="{x}" y="{y}" show="{show}" color="{color}"/>
+						</mc:LineMicroChart>
+					</TileContent>
+				</GenericTile>
+				<GenericTile header="Cumulative Annual Totals" subheader="Expenses By Region" frameType="TwoByOne" press="press" class="sapUiTinyMargin">
+					<TileContent footer="NET PROFIT" unit="€">
+						<NumericContent scale="M" value="97.93" valueColor="Error" indicator="Up"/>
+					</TileContent>
+					<TileContent footer="Unit, Notification" unit="EUR">
+						<mc:LineMicroChart threshold="{/threshold}" size="{/size}" class="sapUiSmallMargin"
+							points="{ path: '/chartOneEmphasizedPoint/points', templateShareable: 'true' }">
+							<mc:LineMicroChartEmphasizedPoint x="{x}" y="{y}" show="{show}" color="{color}"/>
+						</mc:LineMicroChart>
+					</TileContent>
+				</GenericTile>
+				<m:GenericTile header="Income - Expenses" frameType="TwoByOne" press="press">
+					<m:tileContent>
+						<m:TileContent footer="--">
+							<m:content>
+								<mi:ColumnMicroChart>
+									<mi:leftTopLabel>
+										<mi:ColumnMicroChartLabel label="200M"/>
+									</mi:leftTopLabel>
+									<mi:rightTopLabel>
+										<mi:ColumnMicroChartLabel label="170M"/>
+									</mi:rightTopLabel>
+									<mi:leftBottomLabel>
+										<mi:ColumnMicroChartLabel label="Income"/>
+									</mi:leftBottomLabel>
+									<mi:rightBottomLabel>
+										<mi:ColumnMicroChartLabel label="Expenses"/>
+									</mi:rightBottomLabel>
+									<mi:columns>
+										<mi:ColumnMicroChartData value="600" color="Good"/>
+										<mi:ColumnMicroChartData value="100" color="Neutral"/>
+									</mi:columns>
+								</mi:ColumnMicroChart>
+							</m:content>
+						</m:TileContent>
+					</m:tileContent>
+				</m:GenericTile>
+			</l:HorizontalLayout>
+		</layout:Splitter>
+		<layout:Splitter>
+			<layout:contentAreas>
+				<ChartContainer id="chartContainer" showFullScreen="true" showPersonalization="false" autoAdjustHeight="true"
+					personalizationPress="attachPersonalizationPress" contentChange="attachContentChange" title="..">
+					<content>
+						<ChartContainerContent icon="sap-icon://line-chart" title="cc">
+							<content>
+								<viz:VizFrame id="chartContainerVizFrame" height="350px" width="150%" uiConfig="{applicationSet:'fiori'}"></viz:VizFrame>
+							</content>
+						</ChartContainerContent>
+					</content>
+				</ChartContainer>
+			</layout:contentAreas>
+		</layout:Splitter>

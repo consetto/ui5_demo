@@ -1,0 +1,97 @@
+{
+	"TOTAL": [ {
+		"title": "COST OF GOODS SOLD",
+		"value": "101.737.468,24 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Materials",
+		"value": "70.705.030,40 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Inventory",
+		"value": "16.332.862,02 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Other COGS",
+		"value": "14.699.575,82 €"
+	},{
+		"title": "",
+		"value": ""
+	},{
+		"title": "OPERATING EXPENSES",
+		"value": "67.127.355,86 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 General & Admin",
+		"value": "33.231.364,29 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 IT",
+		"value": "19.938.818,57 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Other OPEX",
+		"value": "13.957.173,00 €"
+	},{
+		"title": "",
+		"value": ""
+	},
+	{
+		"title": "OTHER EXPENSES",
+		"value": "1.794.493,67 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Other Expenses",
+		"value": "1.794.493,67 €"
+	}
+	],
+	"TOTALR": [
+	{
+		"title": "REVENUE BY PRODUCT",
+		"value": "199.671.401,79 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 UY Scuti",
+		"value": "79.868.560,72 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 WOH G64",
+		"value": "49.917.850,45 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 RW Cephei",
+		"value": "35.940.852,32 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Westerlund 1-26",
+		"value": "17.970.426,16 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 Other Products",
+		"value": "15.973.712,14 €"
+	},{
+		"title": "",
+		"value": ""
+	},
+	{
+		"title": "REVENUE BY REGION",
+		"value": "199.671.401,79 €"
+	},
+	{
+		"title": "\u00a0\u00a0\u00a0\u00a0 EMEA",
+		"value": "139.769.981,25 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 AMER",
+		"value": "39.934.280,36 €"
+	},{
+		"title": "\u00a0\u00a0\u00a0\u00a0 APAC",
+		"value": "19.967.140,18 €"
+	},{
+		"title": "",
+		"value": ""
+	}
+	],
+	"REVENUE": [
+	{
+		"title": "EMEA",
+		"value": "139.769.981,25 €"
+	},{
+		"title": "AMER",
+		"value": "39.934.280,36 €"
+	},{
+		"title": "APAC",
+		"value": "19.967.140,18 €"
+	},{
+		"title": "",
+		"value": ""
+	}
+	]
+}

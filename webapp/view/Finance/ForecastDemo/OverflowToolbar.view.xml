@@ -1,0 +1,81 @@
+<mvc:View height="100%" controllerName="sap.ui.demo.toolpageapp.controller.Finance.ForecastDemo.OverflowToolbar" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false" enableScrolling="true" class="sapUiContentPadding" showNavButton="false">
+		<content >
+			<OverflowToolbar hAlign="center" id="content" ></OverflowToolbar>
+			<Table id="idHeagTable1" showNoData="false">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Button text="Gesellschaft auswählen" press="handleOpenDialog" icon="sap-icon://filter-fields"/>
+						<ToolbarSpacer/>
+						<SearchField id="month" liveChange="onFilter">
+							<layoutData><OverflowToolbarLayoutData minWidth="200px" maxWidth="300px" shrinkable="true"/></layoutData>
+						</SearchField>
+						<Button text="Zurücksetzen" type="Transparent" press="onReset"/>
+						<OverflowToolbarButton type="Transparent" text="Sort" icon="sap-icon://sort" press="onSort"/>
+						<OverflowToolbarButton type="Transparent" text="Group" icon="sap-icon://group-2" press="onGroup"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<header><Text text=""/></header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="Heiztage"/></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left" width="30%"><Text text="Außentemp an Heiztagen"/></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left" width="24%"><Text text="Gasverbrauch"/>
+					</Column>
+					<Column width="20%" hAlign="left"><Text text="Kosten Forecast"/></Column>
+				</columns>
+			</Table>
+			<Table id="idHeagTable" items="{/HeagCollection}">
+				<columns>
+					<Column width="12em">
+						<header><Text text=""/></header>
+						<footer>
+							<Text text="Summe"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="[d]"/></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left"><Text text="[°C]"/></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="[KWh]"/>
+						<footer>
+							<Text text="{path: 'localModel>/sumK', formatter:'.formatter.calculSUM'}"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="[MMBtu]"/>
+						<footer>
+							<Text text="{path: 'localModel>/sumM', formatter:'.formatter.calculSUM'}"/>
+						</footer>
+					</Column>
+					<Column hAlign="right"><Text text="[EUR]"/>
+						<footer>
+							<ObjectNumber number="{path: 'localModel>/sumE', formatter:'.formatter.calculSUM'}" unit="€"/>
+						</footer>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{Month}"/>
+							<Input value="{D}" width="50%" change="onchangeDC"/>
+							<Input value="{C}" width="50%" change="onchangeDC"/>
+							<Input value="{path: 'K',formatter: '.formatter.curr'}" change="onchange"/>
+							<Input value="{path: 'M',formatter: '.formatter.curr'}" change="onchange"/>
+							<Input value="{path: 'Eur',formatter: '.formatter.curr'} €" change="onchange"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Predict" press="onPredict">
+					<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+				</Button>
+				<OverflowToolbarButton text="Delete" icon="sap-icon://delete" press="onReset"/>
+				<OverflowToolbarButton text="Favorite" icon="sap-icon://favorite" press="onStar"/>
+				<OverflowToolbarButton id="bookmark-this" text="Flag" icon="sap-icon://flag" press="onBookmark" tooltip="bookmark this page"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

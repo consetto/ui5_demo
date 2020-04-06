@@ -1,0 +1,329 @@
+{
+	"HeagCollection": [{
+			"id": 1,
+			"select": "Gesellschaft Nord",
+			"Month": "Januar",
+			"D": 33,
+			"C": 2.3,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 2,
+			"select": "Gesellschaft Nord",
+			"Month": "Februar",
+			"D": 31,
+			"C": 3.9,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 3,
+			"select": "Gesellschaft Nord",
+			"Month": "März",
+			"D": 33,
+			"C": 4.7,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 4,
+			"select": "Gesellschaft Nord",
+			"Month": "April",
+			"D": 32,
+			"C": 7.6,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 5,
+			"select": "Gesellschaft Nord",
+			"Month": "Mai",
+			"D": 20,
+			"C": 11,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 6,
+			"select": "Gesellschaft Nord",
+			"Month": "Juni",
+			"D": 2,
+			"C": 14,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 7,
+			"select": "Gesellschaft Nord",
+			"Month": "Juli",
+			"D": 4,
+			"C": 14.6,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 8,
+			"select": "Gesellschaft Nord",
+			"Month": "August",
+			"D": 3,
+			"C": 13.0,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 9,
+			"select": "Gesellschaft Nord",
+			"Month": "September",
+			"D": 9,
+			"C": 14.6,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 10,
+			"select": "Gesellschaft Nord",
+			"Month": "Oktober",
+			"D": 33,
+			"C": 9.4,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 11,
+			"select": "Gesellschaft Nord",
+			"Month": "November",
+			"D": 32,
+			"C": 4.8,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 12,
+			"select": "Gesellschaft Nord",
+			"Month": "Dezember",
+			"D": 33,
+			"C": 4.7,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 1,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Januar",
+			"D": 31,
+			"C": 2.6,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 2,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Februar",
+			"D": 29,
+			"C": 4.2,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 3,
+			"select": "Gesellschaft SüdWest",
+			"Month": "März",
+			"D": 31,
+			"C": 5,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 4,
+			"select": "Gesellschaft SüdWest",
+			"Month": "April",
+			"D": 30,
+			"C": 7.9,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 5,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Mai",
+			"D": 18,
+			"C": 11.3,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 6,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Juni",
+			"D": 0,
+			"C": 14.3,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 7,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Juli",
+			"D": 2,
+			"C": 14.9,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 8,
+			"select": "Gesellschaft SüdWest",
+			"Month": "August",
+			"D": 1,
+			"C": 13.3,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 9,
+			"select": "Gesellschaft SüdWest",
+			"Month": "September",
+			"D": 7,
+			"C": 14.9,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 10,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Oktober",
+			"D": 31,
+			"C": 9.7,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 11,
+			"select": "Gesellschaft SüdWest",
+			"Month": "November",
+			"D": 30,
+			"C": 5.1,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 12,
+			"select": "Gesellschaft SüdWest",
+			"Month": "Dezember",
+			"D": 31,
+			"C": 5.0,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 1,
+			"select": "Gesellschaft Ost",
+			"Month": "Januar",
+			"D": 30,
+			"C": 2.5,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 2,
+			"select": "Gesellschaft Ost",
+			"Month": "Februar",
+			"D": 28,
+			"C": 4.1,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 3,
+			"select": "Gesellschaft Ost",
+			"Month": "März",
+			"D": 31,
+			"C": 4.9,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 4,
+			"select": "Gesellschaft Ost",
+			"Month": "April",
+			"D": 30,
+			"C": 7.8,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 5,
+			"select": "Gesellschaft Ost",
+			"Month": "Mai",
+			"D": 18,
+			"C": 11.2,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 6,
+			"select": "Gesellschaft Ost",
+			"Month": "Juni",
+			"D": 1,
+			"C": 14.2,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 7,
+			"select": "Gesellschaft Ost",
+			"Month": "Juli",
+			"D": 3,
+			"C": 14.8,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 8,
+			"select": "Gesellschaft Ost",
+			"Month": "August",
+			"D": 2,
+			"C": 13.2,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 9,
+			"select": "Gesellschaft Ost",
+			"Month": "September",
+			"D": 4,
+			"C": 14.8,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 10,
+			"select": "Gesellschaft Ost",
+			"Month": "Oktober",
+			"D": 30,
+			"C": 9.6,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 11,
+			"select": "Gesellschaft Ost",
+			"Month": "November",
+			"D": 29,
+			"C": 5.1,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}, {
+			"id": 12,
+			"select": "Gesellschaft Ost",
+			"Month": "Dezember",
+			"D": 28,
+			"C": 4.9,
+			"K": 0,
+			"M": 0,
+			"Eur": 0
+		}
+
+	]
+}

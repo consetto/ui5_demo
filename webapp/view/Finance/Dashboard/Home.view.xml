@@ -1,0 +1,107 @@
+<mvc:View controllerName="sap.ui.demo.toolpageapp.controller.Finance.Dashboard.Home" xmlns="sap.suite.ui.commons" xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:mi="sap.suite.ui.microchart" xmlns:mc="sap.suite.ui.microchart" xmlns:l="sap.ui.layout" xmlns:commons="sap.ui.commons">
+			<m:Page >
+<!--				<m:Panel>
+					<m:Image src="./images/logo.png"></m:Image>
+				</m:Panel>-->
+				<m:content>
+					<layout:Splitter height="32%">
+						<l:HorizontalLayout id="tablLong">
+							<m:GenericTile press="press" header="Core KPIs" subheader="" frameType="OneByOne" class="TwoByOneSpec">
+								<m:tileContent>
+									<m:TileContent footer="EBIT Margin">
+										<m:content>
+											<mi:RadialMicroChart percentage="17" valueColor="Neutral"/>
+										</m:content>
+									</m:TileContent>
+								</m:tileContent>
+							</m:GenericTile>
+							<m:GenericTile press="press" header="" subheader="" frameType="OneByOne" class="TwoByOneSpec">
+								<m:tileContent>
+									<m:TileContent footer="Gross Profit Margin">
+										<m:content>
+											<mi:RadialMicroChart percentage="82" valueColor="Good"/>
+										</m:content>
+									</m:TileContent>
+								</m:tileContent>
+							</m:GenericTile>
+							<GenericTile header="" subheader="" frameType="OneByOne" press="press" class="TwoByOneSpec3">
+								<TileContent footer="Revenue Trend" unit="€">
+									<mc:LineMicroChart threshold="{/chartEmphasizedPointsNoThreshold/threshold}" size="{/size}"
+										leftTopLabel="{/chartEmphasizedPointsNoThreshold/leftTopLabel}" leftBottomLabel="{/chartEmphasizedPointsNoThreshold/leftBottomLabel}"
+										rightTopLabel="{/chartEmphasizedPointsNoThreshold/rightTopLabel}" rightBottomLabel="{/chartEmphasizedPointsNoThreshold/rightBottomLabel}"
+										class="sapUiSmallMargin" points="{ path: '/chartEmphasizedPointsNoThreshold/points', templateShareable: 'true' }">
+										<mc:LineMicroChartEmphasizedPoint x="{x}" y="{y}" show="{show}" color="{color}"/>
+									</mc:LineMicroChart>
+								</TileContent>
+							</GenericTile>
+							<GenericTile header="" subheader="" frameType="TwoByOne" press="press" class="TwoByOneSpec2">
+								<TileContent footer="NET PROFIT" unit="€">
+									<NumericContent scale="M" value="97.93" valueColor="Error" indicator="Down"/>
+								</TileContent>
+							</GenericTile>
+							<GenericTile header="" subheader="" frameType="TwoByOne" press="press" class="TwoByOneSpec2">
+								<TileContent footer="Working capital" unit="€">
+									<NumericContent scale="M" value="237.8" valueColor="Good" indicator="Up"/>
+								</TileContent>
+							</GenericTile>
+						</l:HorizontalLayout>
+					</layout:Splitter>
+					<layout:Splitter height="66%">
+						<layout:contentAreas>
+							<ChartContainer id="chartContainer" showFullScreen="true" showPersonalization="false" autoAdjustHeight="true"
+								personalizationPress="attachPersonalizationPress" contentChange="attachContentChange" title="">
+								<content>
+									<ChartContainerContent icon="sap-icon://line-chart" title="cc">
+										<content>
+											<viz:VizFrame id="chartContainerVizFrame" height="350px" width="150%" uiConfig="{applicationSet:'fiori'}"></viz:VizFrame>
+										</content>
+									</ChartContainerContent>
+								</content>
+							</ChartContainer>
+						</layout:contentAreas>
+					</layout:Splitter>
+					<m:HBox>
+						<m:Table id="tab1" class="sapUiSizeCompact" items="{ path: '/TOTAL'}">
+							<m:columns>
+								<m:Column>
+									<m:Text text="TOTAL EXPENSES"/>
+								</m:Column>
+								<m:Column>
+									<m:Text text="170.659.317,77 €"/>
+								</m:Column>
+							</m:columns>
+							<m:items>
+								<m:ColumnListItem>
+									<m:cells>
+										<commons:TextView id="x" text="{path: 'title',formatter : '.formatter.indent' }" class="blue"/>
+										<m:Text text="{value}"/>
+									</m:cells>
+								</m:ColumnListItem>
+							</m:items>
+						</m:Table>
+						<l:VerticalLayout>
+							<m:Table id="tab4" class="sapUiSizeCompact" items="{ path: '/TOTALR'}">
+								<m:columns>
+									<m:Column>
+										<m:Text text="TOTAL REVENUE"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="199.671.401,79 €"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem>
+										<m:cells>
+											<commons:TextView text="{ parts: [{path: 'title'}], formatter : '.formatter.indent' }" class="blue"/>
+											<m:Text text="{value}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</l:VerticalLayout>
+					</m:HBox>
+				</m:content>
+			</m:Page>
+</mvc:View>
