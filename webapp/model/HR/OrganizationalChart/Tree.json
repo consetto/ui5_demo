@@ -1,0 +1,67 @@
+[
+	{
+		"text": "Consetto GmbH",
+		"ref": "sap-icon://attachment-audio",
+		"nodes":
+		[
+			{
+				"text": "Development",
+				"ref": "sap-icon://attachment-e-pub",
+				"nodes":[
+					{
+						"text": "Enterprise Applications / SAP",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "Voice Applications",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "Data Science / Machine Learning",
+						"ref": "sap-icon://attachment-html"
+					}
+				]
+			},
+			{
+				"text": "Operations",
+				"ref": "sap-icon://create",
+					"nodes":[
+					{
+						"text": "Finance",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "HR",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "Administration",
+						"ref": "sap-icon://attachment-html"
+					}
+					]
+			},
+			{
+				"text": "Customer Success",
+				"ref": "sap-icon://create",
+					"nodes":[
+					{
+						"text": "Sales",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "Presales",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": "Marketing",
+						"ref": "sap-icon://attachment-html"
+					},
+					{
+						"text": " Customer Support",
+						"ref": "sap-icon://attachment-html"
+					}
+					]
+			}
+		]
+	}
+]

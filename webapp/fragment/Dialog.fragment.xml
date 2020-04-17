@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="sap.consetto.demo.fragment">
+    <P13nDialog showReset="false" ok="onOK" cancel="onCancel" class="sapUiSizeCompact">
+        <panels>
+            <custom:CustomPanel title="Gesellschaft" type="custom1">
+                <custom:content>
+                    <RadioButtonGroup columns="3">
+                        <buttons>
+                            <RadioButton text="Gesellschaft Nord" id="Nord" select="onSelect"/>
+                            <RadioButton text="Gesellschaft SüdWest" id="SudWest" select="onSelect"/>
+                            <RadioButton text="Gesellschaft Ost" id="Ost" select="onSelect"/>
+                        </buttons>
+                    </RadioButtonGroup>
+                </custom:content>
+            </custom:CustomPanel>
+        </panels>
+    </P13nDialog>
+</core:FragmentDefinition>

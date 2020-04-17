@@ -1,11 +1,12 @@
 sap.ui.define([
 	'sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel', 'sap/viz/ui5/data/FlattenedDataset',
 		'sap/viz/ui5/controls/common/feeds/FeedItem',
+			"sap/ui/core/routing/History",
 		'sap/ui/demo/toolpageapp/model/Finance/Dashboard/formatter'
-], function(Controller, JSONModel, FlattenedDataset, FeedItem, formatter) {
+], function(Controller, JSONModel, FlattenedDataset, FeedItem, formatter, History) {
 	"use strict";
 
-	return Controller.extend("sap.consetto.demo.controller.Finance.Dashboard.Home", {
+	return Controller.extend("sap.ui.demo.toolpageapp.controller.Finance.Dashboard.Home", {
 			formatter: formatter,
 			_constants: {
 				sampleName: "sap/ui/demo/toolpageapp/model/Finance/Dashboard",
@@ -203,6 +204,17 @@ sap.ui.define([
 
 
 			},
+			
+		onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 			/* ============================================================ */
 			/* Helper Methods                                               */
 			/* ============================================================ */

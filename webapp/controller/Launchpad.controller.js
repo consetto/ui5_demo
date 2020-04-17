@@ -40,6 +40,55 @@ sap.ui.define([
 		onNavToFinancialDashboard: function () {
 			this.getRouter().navTo("financialDashboard");
 		},
+		
+			onNavToProcessFlow: function() {
+			this.getRouter().navTo("processFlow");
+		},
+		
+		onNavToProcessFlow2  : function() {
+			this.getRouter().navTo("processFlow2");
+		},
+		
+		onNavToProcessFlow3  : function() {
+			this.getRouter().navTo("processFlow3");
+		},
+		
+		onNavToPlanningCalendar : function() {
+			this.getRouter().navTo("planningCalendar");
+		},
+		onNavToOrganizationalChart: function() {
+			this.getRouter().navTo("organizationalChart");
+		},
+
+		onNavToChartContainer: function() {
+			this.getRouter().navTo("chartContainer");
+		},
+		
+		onNavToProjectManagement: function() {
+			this.getRouter().navTo("projectManagement");
+		},
+
+		onNavToReviews: function () {
+			this.getRouter().navTo("reviews");
+		},
+		
+		onNavToProductOv1: function () {
+			this.getRouter().navTo("productOv1");
+		},
+		
+		onNavToProductOv2: function () {
+			this.getRouter().navTo("productOv2");
+		},
+		
+		onNavToProductOv3: function () {
+			this.getRouter().navTo("productOv3");
+		},
+		
+		onNavToDeliveryRoute: function () {
+			this.getRouter().navTo("deliveryRoute");
+		},
+		
+		
 			getProgress: function(aNodes) {
 			if (!aNodes || aNodes.length === 0) {
 				return 0;

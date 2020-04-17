@@ -61,6 +61,22 @@
 			"customer": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/customers.json"
+			},
+			"process": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/ProcessFlowData.json"
+			},
+			"business": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/BusinessData.json"
+			},
+			"suppliers": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/Suppliers.json"
+			},
+			"reviews": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/Reviews.json"
 			}
 		},
 		"routing": {
@@ -110,6 +126,67 @@
 					"pattern": "financialDashboard",
 					"name": "financialDashboard",
 					"target": "financialDashboard"
+				},
+				
+					{
+					"pattern": "processFlow",
+					"name": "processFlow",
+					"target": "processFlow"
+				},
+				{
+					"pattern": "processFlow2",
+					"name": "processFlow2",
+					"target": "processFlow2"
+				},
+				{
+					"pattern": "processFlow3",
+					"name": "processFlow3",
+					"target": "processFlow3"
+				},
+				{
+					"pattern": "chartContainer",
+					"name": "chartContainer",
+					"target": "chartContainer"
+				},
+				{
+					"pattern": "reviews",
+					"name": "reviews",
+					"target": "reviews"
+				},
+				{
+					"pattern": "planningCalendar",
+					"name": "planningCalendar",
+					"target": "planningCalendar"
+				},
+				{
+					"pattern": "organizationalChart",
+					"name": "organizationalChart",
+					"target": "organizationalChart"
+				},
+				{
+					"pattern": "projectManagement",
+					"name": "projectManagement",
+					"target": "projectManagement"
+				},
+				{
+					"pattern": "productOv1",
+					"name": "productOv1",
+					"target": "productOv1"
+				},
+				{
+					"pattern": "productOv2",
+					"name": "productOv2",
+					"target": "productOv2"
+				},
+				{
+					"pattern": "productOv3",
+					"name": "productOv3",
+					"target": "productOv3"
+				},
+				{
+					"pattern": "deliveryRoute",
+					"name": "deliveryRoute",
+					"target": "deliveryRoute"
 				}
 			],
 			"targets": {
@@ -148,6 +225,42 @@
 				
 				"financialDashboard": {
 					"viewName": "Finance.Dashboard.Home"
+				},
+					"processFlow": {
+					"viewName": "ProcessFlow"
+				},
+				"processFlow2": {
+					"viewName": "HR.processFlow.ProcessFlow"
+				},
+				"processFlow3": {
+					"viewName": "HR.processFlow.ProcessFlowMNodes"
+				},
+				"chartContainer": {
+					"viewName": "ChartContainer"
+				},
+				"reviews": {
+					"viewName": "Reviews"
+				},
+				"planningCalendar": {
+					"viewName": "HR.PlanningCalender.Page"
+				},
+				"organizationalChart": {
+					"viewName": "HR.OrganizationalChart.Page"
+				},
+				"projectManagement": {
+					"viewName": "HR.ProjectManagement.BasicGanttChart"
+				},
+				"productOv1": {
+					"viewName": "Product.ProductOv1.IconTabBar"
+				},
+				"productOv2": {
+					"viewName": "Product.ProductOv2.View"
+				},
+				"productOv3": {
+					"viewName": "Product.ProductOv3.View"
+				},
+				"deliveryRoute": {
+					"viewName": "Logistic.DeliveryRoute.View"
 				}
 			}
 		}

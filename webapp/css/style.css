@@ -1,0 +1,116 @@
+/***************************************************************Style for ForecastDemo**********************************************************/
+
+.sapMInputBaseInner {
+    color: #c02c2c !important;
+    padding: 0px 0.75rem !important;
+    border: 0px !important;
+}
+/*it s causing conflicts*/
+/*.sapMFlexItemAlignAuto {
+    width: 25% !important;
+}*/
+
+#bookmark-this {
+  padding: 5px 10px;
+  background-color: #f0ad4e;
+  border: 1px solid #eea236;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+#bookmark-this:hover {
+  background-color: #ec971f;
+  border: 1px solid #d58512;
+  text-decoration: none;
+}
+
+#bookmark-this:active {
+  background-color: #ec971f;
+  border: 1px solid #d58512;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+/*************************************************************** End Style for ForecastDemo **********************************************************/
+
+/******************************************************************* Style for Dashboard **********************************************************/
+
+/* Enter your custom styles here */
+.columnStyle0 {
+  background-color: rgba(0, 0, 255, 0.5) !important;
+}
+
+.sapMPanelCustom{
+	background-color:#ff5500;
+}
+.sapMTileCntFtrTxt{
+	text-align: right !important;
+}
+
+.columnStyle1 {
+  background-color: rgba(255, 0, 0, 0.5) !important;
+}
+
+.highlight {
+  background-color: rgba(255, 0, 255, 0.5) !important;
+}
+.sapMGT.TwoByOne {
+    height: 11.5rem !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.sapMGT {
+   background: #fafafa;
+}
+.indent {
+	margin-left: 8% !important;
+	
+}
+.nonindent {
+	margin-left: 0% !important;
+	
+}
+   
+
+/*.sapMGT.OneByOne{
+	width: 16.5rem !important;
+    box-shadow: none !important;
+}
+*/
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 5rem !important;
+}
+.blue{color:#5cbae6;font-weight: bold;}
+.title{color:red;}
+.sapMGT.TwoByOne {
+    width: 16.5rem !important;
+}
+.v-m-title{display:none;}
+.sapUiHLayoutNoWrap {
+    white-space: normal !important;
+}
+.TwoByOneSpec{
+	width:14.5rem !important;
+	box-shadow: none !important;
+	text-align:  center !important;
+
+} 
+.TwoByOneSpec2{
+	width:14.5rem !important;
+	box-shadow: none !important;
+	text-align:  right !important;
+} 
+.TwoByOneSpec3{
+	width:16.5rem !important;
+	box-shadow: none !important;
+}
+
+/********************************************************* End Style for Dashboard **************************************************************/

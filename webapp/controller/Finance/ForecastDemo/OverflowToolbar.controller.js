@@ -4,11 +4,11 @@ sap.ui.define([
 	'sap/ui/model/Filter',
 	'sap/ui/model/Sorter',
 	'sap/ui/model/json/JSONModel',
-	
+	'sap/ui/core/routing/History',
 	'sap/ui/demo/toolpageapp/model/Finance/ForecastDemo/formatter',
 	'sap/m/MessageBox',
 	'sap/m/MessageStrip'
-], function(jQuery, Controller, Filter, Sorter, JSONModel, formatter, MessageBox,MessageStrip) {
+], function(jQuery, Controller, Filter, Sorter, JSONModel, formatter, MessageBox,MessageStrip, History) {
 	"use strict";
 
 	var OverflowToolbarController = Controller.extend("sap.ui.demo.toolpageapp.controller.Finance.ForecastDemo.OverflowToolbar", {
@@ -89,6 +89,16 @@ sap.ui.define([
 
 			this.fnApplyFiltersAndOrdering();
 		},
+			onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 
 		onGroup: function(oEvent) {
 			this.bGrouped = !this.bGrouped;
@@ -159,7 +169,7 @@ sap.ui.define([
 		},
 
 		handleOpenDialog: function() {
-			var oPersonalizationDialog = sap.ui.xmlfragment("sap.consetto.demo.fragment.Dialog", this);
+			var oPersonalizationDialog = sap.ui.xmlfragment("sap.ui.demo.toolpageapp.fragment.Dialog", this);
 			this.getView().addDependent(oPersonalizationDialog);
 			oPersonalizationDialog.setContentHeight("7%");
 			oPersonalizationDialog.setContentWidth("40%");
