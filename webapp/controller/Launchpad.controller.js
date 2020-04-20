@@ -87,6 +87,9 @@ sap.ui.define([
 		onNavToDeliveryRoute: function () {
 			this.getRouter().navTo("deliveryRoute");
 		},
+			onNavToEntrepriseApp: function () {
+			window.open("https://consetto.com/projects/enterprise-applications/","_blank");
+		},
 		
 		
 			getProgress: function(aNodes) {
