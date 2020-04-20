@@ -14,6 +14,7 @@ sap.ui.define([
             sap.ui.getCore().byId("__xmlview0--GanttChartContainer").setTimeZoomRate(1);
             sap.ui.getCore().byId("__xmlview0--ganttView").jumpToPosition(new Date("2015/01/01"));
 		},
+	
 		
 		onInit: function() {
 			var oGanttChartContainer = this.getView().byId("GanttChartContainer");
@@ -74,6 +75,7 @@ sap.ui.define([
 
 			
 		},
+		
 		
 		onAfterRendering: function(){
 			var that = this;

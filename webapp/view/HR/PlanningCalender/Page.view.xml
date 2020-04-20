@@ -4,6 +4,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:unified="sap.ui.unified"
 	xmlns="sap.m">
+			<Page showNavButton="true" navButtonPress="onNavBack">
 	<VBox class="sapUiSmallMargin">
 		<PlanningCalendar
 			id="PC1"
@@ -61,4 +62,5 @@
 			</items>
 		</MultiComboBox>
 	</VBox>
+		</Page>
 </mvc:View>

@@ -3,6 +3,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:dnd="sap.ui.core.dnd">
+			<Page showNavButton="true" navButtonPress="onNavBack">
 	 	<Tree
 		    id="Tree"
 		    items="{path: '/'}">
@@ -15,4 +16,5 @@
 				</dragDropConfig>
 			<StandardTreeItem title="{text}"/>
 		</Tree>
+			</Page>
 </mvc:View>

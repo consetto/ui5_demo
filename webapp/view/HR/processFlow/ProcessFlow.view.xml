@@ -4,8 +4,9 @@
 	xmlns="sap.suite.ui.commons"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	controllerName="sap.ui.demo.toolpageapp.controller.HR.ProcessController.ProcessFlow">
-	<m:Panel>
-		<m:Toolbar>
+	<m:Page showNavButton="true" navButtonPress="onNavBack">
+	<m:Panel >
+		<m:Toolbar >
 			<m:Title text="Process Flow sample" />
 			<m:ToolbarSpacer />
 			<m:Button text="Zoom In" press="onZoomIn" type="Transparent" />
@@ -57,4 +58,5 @@
 			</lanes>
 		</ProcessFlow>
 	</m:Panel>
+		</m:Page>
 </mvc:View>

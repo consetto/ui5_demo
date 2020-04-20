@@ -12,7 +12,16 @@ sap.ui.define([
 			this.oProductsModel = this.initSampleProductsModel();
 			this.getView().setModel(this.oProductsModel);
 		},
-
+	onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 		onExit: function() {
 			this.oProductsModel.destroy();
 		},

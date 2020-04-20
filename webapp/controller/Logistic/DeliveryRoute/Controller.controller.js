@@ -15,7 +15,16 @@ sap.ui.define([
 			oDeviceModel.setDefaultBindingMode("OneWay");
 			this.getView().setModel(oDeviceModel, "device");
 		},
-
+	onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 		onSelectionChange: function(oEvt) {
 			var oList = oEvt.getSource();
 			var aItems = oList.getSelectedItems();

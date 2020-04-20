@@ -11,6 +11,16 @@ sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel'],
 			var oTree = this.byId("Tree");
 			oTree.setMode("MultiSelect");
 		},
+		onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 
 		onDragStart : function (oEvent) {
 			var oTree = this.byId("Tree");
