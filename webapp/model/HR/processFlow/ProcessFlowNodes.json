@@ -178,11 +178,11 @@
 			"children": [ 5,7,6,8 ],
 			"focused": false,
 			"texts": "Project Manager",
-			"src": "images/consettoTeam/katja.jpg",
+			"src": "images/consettoTeam/katja2.jpg",
 			"quickView": {
 				"pageId": "employeePageId",
 				"header": "Employee Info",
-				"icon": "images/consettoTeam/katja.jpg",
+				"icon": "images/consettoTeam/katja2.jpg",
 				"title": "Imen",
 				"description": "Project Manager",
 				"groups": [
@@ -350,11 +350,11 @@
 			"children": [ ],
 			"focused": false,
 			"texts": "Dev. Expert",
-			"src": "images/consettoTeam/wissalkh.jpg",
+			"src": "images/consettoTeam/wissal.jpg",
 			"quickView": {
 				"pageId": "employeePageId",
 				"header": "Employee Info",
-				"icon": "images/consettoTeam/wissalkh.jpg",
+				"icon": "images/consettoTeam/wissal.jpg",
 				"title": "wissal",
 				"description": "Dev. Expert",
 				"groups": [
