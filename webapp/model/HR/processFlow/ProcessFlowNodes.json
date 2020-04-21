@@ -4,7 +4,7 @@
 			"id": "1",
 			"lane": "0",
 			"title": "Michael",
-			"children": [ 2, 3 ],
+			"children": [ 2, 3],
 			"focused": true,
 			"texts": "Account Manager",
 			"src": "images/consettoTeam/Michael.jpg",
@@ -61,7 +61,7 @@
 			"id": "2",
 			"lane": "1",
 			"title": "Brian",
-			"children": [ ],
+			"children": [4 ],
 			"focused": false,
 			"texts": "Solution Manager",
 			"src": "images/consettoTeam/Brian.jpg",
@@ -118,7 +118,7 @@
 			"id": "3",
 			"lane": "1",
 			"title": "Imen",
-			"children": [ 4,5 ],
+			"children": [ ],
 			"focused": false,
 			"texts": "Solution Manager",
 			"src": "images/consettoTeam/Imen.jpg",
@@ -171,11 +171,68 @@
 				]
 			}
 		},
-		{
+			{
 			"id": "4",
 			"lane": "2",
+			"title": "Katja",
+			"children": [ 5,7,6,8 ],
+			"focused": false,
+			"texts": "Project Manager",
+			"src": "images/consettoTeam/katja.jpg",
+			"quickView": {
+				"pageId": "employeePageId",
+				"header": "Employee Info",
+				"icon": "images/consettoTeam/katja.jpg",
+				"title": "Imen",
+				"description": "Project Manager",
+				"groups": [
+					{
+						"heading": "Contact Details",
+						"elements": [
+							{
+								"label": "Phone",
+								"value": "+49 6151 460 96 55",
+								"url": null,
+								"elementType": "phone",
+								"emailSubject": null
+							},
+							{
+								"label": "Email",
+								"value": "info@consetto.com",
+								"url": null,
+								"elementType": "email",
+								"emailSubject" : "Subject"
+
+							}
+						]
+					},
+					{
+						"heading": "Company",
+						"elements": [
+							{
+								"label": "Name",
+								"value": "Consetto Gmbh",
+								"url": "https://www.consetto.com",
+								"elementType": "link",
+								"emailSubject": null
+							},
+							{
+								"label": "Address",
+								"value": "Hilpertstraße 31, 64295 Darmstadt, Germany",
+								"url": null,
+								"elementType": "text",
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "5",
+			"lane": "3",
 			"title": "Nizar",
-			"children": [ ],
+			"children": [9 ],
 			"focused": false,
 			"texts": "Dev. Manager",
 			"src": "images/consettoTeam/Nizar.jpg",
@@ -229,17 +286,17 @@
 			}
 		},
 		{
-			"id": "5",
-			"lane": "2",
-			"title": "Elhem",
-			"children": [6],
+			"id": "6",
+			"lane": "3",
+			"title": "Carolina",
+			"children": [],
 			"focused": false,
 			"texts": "Dev. Expert",
-			"src": "images/consettoTeam/Elhem.jpg",
+			"src": "images/consettoTeam/",
 			"quickView": {
 				"pageId": "employeePageId",
 				"header": "Employee Info",
-				"icon": "images/consettoTeam/Elhem.jpg",
+				"icon": "images/consettoTeam/",
 				"title": "Elhem",
 				"description": "Dev. Expert",
 				"groups": [
@@ -285,19 +342,134 @@
 				]
 			}
 		},
-		{
-			"id": "6",
+		
+			{
+			"id": "7",
 			"lane": "3",
-			"title": "Waleed",
+			"title": "Wissal",
 			"children": [ ],
 			"focused": false,
-			"texts": "Quality Manager",
-			"src": "images/consettoTeam/Waleed.jpg",
+			"texts": "Dev. Expert",
+			"src": "images/consettoTeam/wissalkh.jpg",
 			"quickView": {
 				"pageId": "employeePageId",
 				"header": "Employee Info",
-				"icon": "images/consettoTeam/Waleed.jpg",
-				"title": "Waleed",
+				"icon": "images/consettoTeam/wissalkh.jpg",
+				"title": "wissal",
+				"description": "Dev. Expert",
+				"groups": [
+					{
+						"heading": "Contact Details",
+						"elements": [
+							{
+								"label": "Phone",
+								"value": "+49 6151 460 96 55",
+								"url": null,
+								"elementType": "phone",
+								"emailSubject": null
+							},
+							{
+								"label": "Email",
+								"value": "info@consetto.com",
+								"url": null,
+								"elementType": "email",
+								"emailSubject" : "Subject"
+
+							}
+						]
+					},
+					{
+						"heading": "Company",
+						"elements": [
+							{
+								"label": "Name",
+								"value": "Consetto Gmbh",
+								"url": "https://www.consetto.com",
+								"elementType": "link",
+								"emailSubject": null
+							},
+							{
+								"label": "Address",
+								"value": "Hilpertstraße 31, 64295 Darmstadt, Germany",
+								"url": null,
+								"elementType": "text",
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "8",
+			"lane": "3",
+			"title": "Tobias",
+			"children": [ ],
+			"focused": false,
+			"texts": "Dev. Expert",
+			"src": "images/consettoTeam/",
+			"quickView": {
+				"pageId": "employeePageId",
+				"header": "Employee Info",
+				"icon": "images/consettoTeam/",
+				"title": "Tobias",
+				"description": "Dev. Expert",
+				"groups": [
+					{
+						"heading": "Contact Details",
+						"elements": [
+							{
+								"label": "Phone",
+								"value": "+49 6151 460 96 55",
+								"url": null,
+								"elementType": "phone",
+								"emailSubject": null
+							},
+							{
+								"label": "Email",
+								"value": "info@consetto.com",
+								"url": null,
+								"elementType": "email",
+								"emailSubject" : "Subject"
+
+							}
+						]
+					},
+					{
+						"heading": "Company",
+						"elements": [
+							{
+								"label": "Name",
+								"value": "Consetto Gmbh",
+								"url": "https://www.consetto.com",
+								"elementType": "link",
+								"emailSubject": null
+							},
+							{
+								"label": "Address",
+								"value": "Hilpertstraße 31, 64295 Darmstadt, Germany",
+								"url": null,
+								"elementType": "text",
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}
+		},
+			{
+			"id": "9",
+			"lane": "4",
+			"title": "Lawrence",
+			"children": [ ],
+			"focused": false,
+			"texts": "Quality Manager",
+			"src": "images/consettoTeam/",
+			"quickView": {
+				"pageId": "employeePageId",
+				"header": "Employee Info",
+				"icon": "images/consettoTeam/",
+				"title": "Lawrence",
 				"description": "Quality Manager",
 				"groups": [
 					{
@@ -342,6 +514,17 @@
 				]
 			}
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	],
 	"lanes": [
 		{
@@ -367,6 +550,12 @@
 			"position": 3,
 			"icon": "sap-icon://employee",
 			"text": "Level 4"
+		},
+			{
+			"id": "4",
+			"position": 4,
+			"icon": "sap-icon://employee",
+			"text": "Level 5"
 		}
 	]
 }
