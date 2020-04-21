@@ -464,11 +464,11 @@
 			"children": [ ],
 			"focused": false,
 			"texts": "Quality Manager",
-			"src": "images/consettoTeam/",
+			"src": "images/consettoTeam/Lawrence.jpg",
 			"quickView": {
 				"pageId": "employeePageId",
 				"header": "Employee Info",
-				"icon": "images/consettoTeam/",
+				"icon": "images/consettoTeam/Lawrence.jpg",
 				"title": "Lawrence",
 				"description": "Quality Manager",
 				"groups": [
