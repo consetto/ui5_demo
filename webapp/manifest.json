@@ -122,13 +122,12 @@
 					"name": "OverflowToolbar",
 					"target": "OverflowToolbar"
 				},
-					{
+				{
 					"pattern": "financialDashboard",
 					"name": "financialDashboard",
 					"target": "financialDashboard"
 				},
-				
-					{
+				{
 					"pattern": "processFlow",
 					"name": "processFlow",
 					"target": "processFlow"
@@ -216,17 +215,16 @@
 					"viewId": "statistics",
 					"viewName": "Statistics"
 				},
-					"Launchpad": {
+				"Launchpad": {
 					"viewName": "Launchpad"
 				},
 				"OverflowToolbar": {
 					"viewName": "Finance.ForecastDemo.OverflowToolbar"
 				},
-				
 				"financialDashboard": {
 					"viewName": "Finance.Dashboard.Home"
 				},
-					"processFlow": {
+				"processFlow": {
 					"viewName": "ProcessFlow"
 				},
 				"processFlow2": {
@@ -264,5 +262,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
