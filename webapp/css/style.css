@@ -112,5 +112,9 @@
 	width:16.5rem !important;
 	box-shadow: none !important;
 }
+div.sapSuiteLMCLeftBottomLabel.sapSuiteLMCLabel
+{
+	    padding-bottom: 14px !important;
 
+}
 /********************************************************* End Style for Dashboard **************************************************************/
