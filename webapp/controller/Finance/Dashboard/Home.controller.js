@@ -197,7 +197,9 @@ sap.ui.define([
 				this._updateVizFrame(oVizFrame);
 				var oModel = new JSONModel(secondCadreModel);
 				this.getView().byId("tablLong").setModel(oModel);
-				var sPath1 = jQuery.sap.getModulePath("sap/consetto/demo/model/Finance/Dashboard", "/table1.json");
+				//var sPath1 = jQuery.sap.getModulePath("sap/consetto/demo/model/Finance/Dashboard", "/table1.json");
+				var sPath1 = jQuery.sap.getModulePath("sap/ui/demo/toolpageapp/model/Finance/Dashboard", "/table1.json");
+
 				var oModel1 = new JSONModel(sPath1);
 				this.getView().byId("tab1").setModel(oModel1);
 				this.getView().byId("tab4").setModel(oModel1);
