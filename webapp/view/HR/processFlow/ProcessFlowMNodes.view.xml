@@ -3,6 +3,7 @@
 	xmlns:m="sap.m"
 	xmlns="sap.suite.ui.commons"
 	controllerName="sap.ui.demo.toolpageapp.controller.HR.ProcessController.ProcessFlowMNodes">
+	<m:Page showNavButton="true" navButtonPress="onNavBack">
 	<m:Panel>
 		<m:Label text="Process Flow sample case with zooming and highlight path buttons - multiple root nodes" />
 		<m:HBox renderType="Bare">
@@ -43,4 +44,5 @@
 			</lanes>
 		</ProcessFlow>
 	</m:Panel>
+		</m:Page>
 </mvc:View>

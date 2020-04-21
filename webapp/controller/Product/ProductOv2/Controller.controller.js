@@ -70,6 +70,16 @@ sap.ui.define([
 		onAlternateToggle: function(oEvent) {
 			this.byId("table").setAlternateRowColors(oEvent.getParameter("pressed"));
 		},
+			onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 
 		onSelectionModeChange: function(oEvent) {
 			var oTable = this.byId("table");

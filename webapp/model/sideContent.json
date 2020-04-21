@@ -33,7 +33,7 @@
 		},
 				{
 			"title": "Launchpad",
-			"icon": "sap-icon://home",
+			"icon": "sap-icon://business-by-design",
 			"expanded": true,
 			"key": "Launchpad",
 			"items": []

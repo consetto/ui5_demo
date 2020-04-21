@@ -6,8 +6,8 @@
 	xmlns:c="sap.ui.core"
 	xmlns:m="sap.m"
 	height="100%">
-	<m:Page
-		showHeader="false"
+	<m:Page showNavButton="true" navButtonPress="onNavBack"
+		showHeader="true"
 		enableScrolling="false"
 		class="sapUiContentPadding">
 		<m:content>

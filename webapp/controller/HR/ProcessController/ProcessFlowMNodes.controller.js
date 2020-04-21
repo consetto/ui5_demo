@@ -12,7 +12,16 @@ sap.ui.define([ 'jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/ui/model
 
 			this.getView().setModel(oModel);
 		},
-
+	onNavBack: function (oEvent) {
+			var oHistory, sPreviousHash;
+	        oHistory = sap.ui.core.routing.History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Launchpad", {}, true /*no history*/);
+			}
+		},
 		onHighlightPath: function(oEvent) {
 			var sDataPath;
 			var oModel = this.oProcessFlow.getModel();
