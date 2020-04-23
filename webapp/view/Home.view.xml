@@ -27,9 +27,9 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell
+				<l:BlockLayoutCell 
 					backgroundColorSet="ColorSet11"
-					backgroundColorShade="ShadeD">
+					backgroundColorShade="ShadeD" >
 					<l:VerticalLayout>
 						<core:Icon
 							src="sap-icon://role"
@@ -37,18 +37,20 @@
 							color="Default"/>
 						<Title
 							id="administrationTile"
-							text="{i18n>administrationTitle}"
+							text="{i18n>ProcessFlowTitle}"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="{i18n>administrationContent}"
+							text="{i18n>ProcessFlowContent}"
 							class="sapUiTinyMarginBottom"/>
 						<Link
-							text="{i18n>accessLink}"
+							text="{i18n>accessLink}" 
 							tooltip="{i18n>accessAdministrationLink}"/>
 						<Link
-							text="{i18n>learnLink}"
+							text="{i18n>learnLink}" 
+							target="_blank"
+				            href="https://consetto.com/en/about-us/"
 							tooltip="{i18n>learnAdministrationTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
@@ -56,24 +58,26 @@
 					backgroundColorSet="ColorSet11"
 					backgroundColorShade="ShadeB">
 					<l:VerticalLayout>
-						<core:Icon
+						<core:Icon 
 							src="sap-icon://add-product"
 							size="2.5rem"
 							color="Default"/>
 						<Title
 							id="productTile"
-							text="{i18n>productTitle}"
+							text="{i18n>productionTitle}"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="{i18n>productContent}"
+							text="{i18n>productionContent}"
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
 							tooltip="{i18n>accessProductsLink}"/>
 						<Link
 							text="{i18n>learnLink}"
+							target="_blank"
+				            href="https://consetto.com/en/"
 							tooltip="{i18n>learnProductsTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
@@ -86,18 +90,20 @@
 							size="2.5rem"
 							color="Default"/>
 						<Title
-							text="{i18n>revenueTitle}"
+							text="{i18n>PredictiveForecastTitle}"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="{i18n>revenueContent}"
+							text="{i18n>PredictiveForecastContent}"
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
 							tooltip="{i18n>accessRevenueLink}"/>
-						<Link
+						<Link  
 							text="{i18n>learnLink}"
+							target="_blank"   
+				            href=" https://consetto.com/en/enterprise-planning/"
 							tooltip="{i18n>learnRevenueTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
@@ -108,20 +114,22 @@
 						<core:Icon
 							src="sap-icon://supplier"
 							size="2.5rem"
-							color="Default"/>
+							color="Default"/> 
 						<Title
-							text="{i18n>supplierTitle}"
+							text="{i18n>LogisticsTitle}"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="{i18n>supplierContent}"
+							text="{i18n>LogisticsContent}"
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
 							tooltip="{i18n>accessSuppliersLink}"/>
 						<Link
-							text="{i18n>learnLink}"
+							text="{i18n>learnLink}" 
+							target="_blank"   
+				            href=" https://consetto.com/en/abap-development/"
 							tooltip="{i18n>learnSuppliersTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
@@ -136,18 +144,21 @@
 							size="2.5rem"
 							color="Default"/>
 						<Title
-							text="{i18n>socialMediaTitle}"
+							text="{i18n>FinancialDashboardTitle}"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="{i18n>socialMediaContent}"
+							text="{i18n>FinancialDashboardContent}"
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
 							tooltip="{i18n>accessSocialLink}"/>
 						<Link
-							text="{i18n>learnLink}"
+							text="{i18n>learnLink}" 
+								target="_blank"   
+				            href="  https://consetto.com/en/enterprise-applications/"
+				           
 							tooltip="{i18n>learnSocialMediaTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
