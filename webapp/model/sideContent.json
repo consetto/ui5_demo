@@ -43,12 +43,13 @@
 		{
 			"title": "Important Links",
 			"icon": "sap-icon://chain-link",
-			"key": "Important Links was pressed"
+			"key": "ImportantLinks"
+			
 		},
 		{
-			"title": "Legal",
+			"title": "Imprint ",
 			"icon": "sap-icon://compare",
-			"key": "Legal was pressed"
+			"key": "Imprint  was pressed"
 		}
 	],
 	"masterSettings": [

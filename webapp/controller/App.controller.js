@@ -76,7 +76,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent The item select event
 		 */
 		onItemSelect: function(oEvent) {
-			var oItem = oEvent.getParameter('item');
+			var oItem = oEvent.getParameter('item');  
 			var sKey = oItem.getKey();
 			// if you click on home, settings or statistics button, call the navTo function
 			if ((sKey === "home" || sKey === "masterSettings" || sKey === "statistics"|| sKey === "Launchpad")) {
@@ -85,10 +85,15 @@ sap.ui.define([
 					this.onSideNavButtonPress();
 				}
 				this.getRouter().navTo(sKey);
-			} else {
+			} else if (sKey === "ImportantLinks")
+			{window.open("https://consetto.com/en/enterprise-applications/","_blank");}
+			else{
 				MessageToast.show(sKey);
 			}
 		},
+		
+		
+		
 
 		onUserNamePress: function(oEvent) {
 			var oBundle = this.getModel("i18n").getResourceBundle();
