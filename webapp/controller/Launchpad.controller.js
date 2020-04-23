@@ -3,7 +3,7 @@ sap.ui.define([
 	'sap/m/MessageToast',
 	'sap/ui/model/json/JSONModel',
 	'sap/ui/demo/toolpageapp/model/formatter'
-], function (BaseController, MessageToast, JSONModel, formatter) {
+], function (BaseController, MessageToast, JSONModel, formatter, NumberFormat) {
 	"use strict";
 	return BaseController.extend("sap.ui.demo.toolpageapp.controller.Launchpad", {
 		formatter: formatter,
@@ -108,6 +108,13 @@ sap.ui.define([
 		},
 
 	
+		formatNumber: function(value) {
+			var oFloatFormatter = NumberFormat.getFloatInstance({
+				style: "short",
+				decimals: 1
+			});
+			return oFloatFormatter.format(value);
+		},
 
 		formatJSONDate: function(date) {
 			var oDate = new Date(Date.parse(date));

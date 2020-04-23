@@ -214,8 +214,8 @@ sap.ui.define([
 								tentative: false
 							},
 							{
-								start: new Date("2018", "1", "1", "0", "0"),
-								end: new Date("2018", "3", "30", "23", "59"),
+								start: new Date("2021", "1", "1", "0", "0"),
+								end: new Date("2021", "3", "30", "23", "59"),
 								title: "New quarter",
 								type: "Type10",
 								tentative: false
@@ -277,8 +277,8 @@ sap.ui.define([
 									tentative: false
 								},
 								{
-									start: new Date("2018", "0", "1", "0", "0"),
-									end: new Date("2018", "2", "31", "23", "59"),
+									start: new Date("2021", "0", "1", "0", "0"),
+									end: new Date("2021", "2", "31", "23", "59"),
 									title: "New quarter",
 									type: "Type10",
 									tentative: false
@@ -370,8 +370,8 @@ sap.ui.define([
 									tentative: false
 								},
 								{
-									start: new Date("2018", "0", "1", "0", "0"),
-									end: new Date("2018", "2", "31", "23", "59"),
+									start: new Date("2021", "0", "1", "0", "0"),
+									end: new Date("2021", "2", "31", "23", "59"),
 									title: "New quarter",
 									type: "Type10",
 									tentative: false
@@ -512,8 +512,8 @@ sap.ui.define([
 									tentative: false
 								},
 								{
-									start: new Date("2018", "0", "1", "0", "0"),
-									end: new Date("2018", "2", "31", "23", "59"),
+									start: new Date("2021", "0", "1", "0", "0"),
+									end: new Date("2021", "2", "31", "23", "59"),
 									title: "New quarter",
 									type: "Type10",
 									tentative: false

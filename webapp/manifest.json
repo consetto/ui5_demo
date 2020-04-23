@@ -38,10 +38,12 @@
 				"sap.tnt": {},
 				"sap.ui.layout": {},
 				"sap.uxap": {},
-				"sap.suite.ui.microchart": {
-					"lazy": true
-				}
+					"sap.suite.ui.microchart": {}
 			}
+		},
+			"contentDensities": {
+			"compact": true,
+			"cozy": true
 		},
 		"models": {
 			"i18n": {

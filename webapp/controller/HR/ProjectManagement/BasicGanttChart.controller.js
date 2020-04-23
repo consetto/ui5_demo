@@ -14,7 +14,6 @@ sap.ui.define([
             sap.ui.getCore().byId("__xmlview0--GanttChartContainer").setTimeZoomRate(1);
             sap.ui.getCore().byId("__xmlview0--ganttView").jumpToPosition(new Date("2015/01/01"));
 		},
-	
 		
 		onInit: function() {
 			var oGanttChartContainer = this.getView().byId("GanttChartContainer");
@@ -75,7 +74,6 @@ sap.ui.define([
 
 			
 		},
-		
 		
 		onAfterRendering: function(){
 			var that = this;
@@ -791,7 +789,7 @@ sap.ui.define([
 			if (aSelectedRows.length >= 1) {
 				return true;
 			} else {
-				MessageToast.show("Plase select one or more rows");
+				MessageToast.show("Please select one or more rows");
 				return false;
 			}
 		},
