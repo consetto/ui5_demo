@@ -292,11 +292,11 @@
 			"children": [],
 			"focused": false,
 			"texts": "Dev. Expert",
-			"src": "images/consettoTeam/",
+			"src": "images/consettoTeam/Carolina.jpg",
 			"quickView": {
 				"pageId": "employeePageId",
 				"header": "Employee Info",
-				"icon": "images/consettoTeam/",
+				"icon": "images/consettoTeam/Carolina.jpg",
 				"title": "Elhem",
 				"description": "Dev. Expert",
 				"groups": [
