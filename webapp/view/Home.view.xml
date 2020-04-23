@@ -46,6 +46,7 @@
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}" 
+								press="handleLinkPressprocessFlow3"
 							tooltip="{i18n>accessAdministrationLink}"/>
 						<Link
 							text="{i18n>learnLink}" 
@@ -73,6 +74,7 @@
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
+							press="handleLinkPressprocessFlow"
 							tooltip="{i18n>accessProductsLink}"/>
 						<Link
 							text="{i18n>learnLink}"
@@ -99,6 +101,7 @@
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
+							press="handleLinkPressPredictiveForecast"
 							tooltip="{i18n>accessRevenueLink}"/>
 						<Link  
 							text="{i18n>learnLink}"
@@ -125,6 +128,7 @@
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
+							press="handleLinkPressDeliveryRoute"
 							tooltip="{i18n>accessSuppliersLink}"/>
 						<Link
 							text="{i18n>learnLink}" 
@@ -153,6 +157,7 @@
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="{i18n>accessLink}"
+							press="handleLinkPressFinancialDashboard"
 							tooltip="{i18n>accessSocialLink}"/>
 						<Link
 							text="{i18n>learnLink}" 

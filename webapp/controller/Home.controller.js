@@ -16,6 +16,27 @@ sap.ui.define([
 			Device.media.attachHandler(function (oDevice) {
 				this.getModel("view").setProperty("/isPhone", oDevice.name === "Phone");
 			}.bind(this));
-		}
+		},
+		
+	handleLinkPressprocessFlow4: function() {
+			this.getRouter().navTo("processFlow3");
+		},
+			handleLinkPressprocessFlow3: function() {
+			this.getRouter().navTo("processFlow3");
+		},
+			handleLinkPressprocessFlow: function() {
+			this.getRouter().navTo("processFlow");
+		},
+			handleLinkPressDeliveryRoute: function () {
+			this.getRouter().navTo("deliveryRoute");
+		},
+				handleLinkPressPredictiveForecast: function () {
+				
+			this.getRouter().navTo("OverflowToolbar");
+		},
+		handleLinkPressFinancialDashboard: function () {
+			this.getRouter().navTo("financialDashboard");
+		},
+		
 	});
 });
