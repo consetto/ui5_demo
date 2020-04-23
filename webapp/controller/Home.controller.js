@@ -18,9 +18,6 @@ sap.ui.define([
 			}.bind(this));
 		},
 		
-	handleLinkPressprocessFlow4: function() {
-			this.getRouter().navTo("processFlow3");
-		},
 			handleLinkPressprocessFlow3: function() {
 			this.getRouter().navTo("processFlow3");
 		},
