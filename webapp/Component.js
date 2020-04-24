@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
-	"./model/models",
+	"sap/ui/demo/toolpageapp/model/models",
 	"sap/ui/core/routing/History",
 	"sap/ui/model/resource/ResourceModel"
 ], function(UIComponent, models, History) {
@@ -40,5 +40,6 @@ sap.ui.define([
 			}
 			return this._sContentDensityClass;
 		}
+		
 	});
 });
