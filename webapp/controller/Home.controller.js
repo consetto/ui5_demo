@@ -27,7 +27,7 @@ sap.ui.define([
 			handleLinkPressDeliveryRoute: function () {
 			this.getRouter().navTo("deliveryRoute");
 		},
-				handleLinkPressPredictiveForecast: function () {
+		handleLinkPressPredictiveForecast: function () {
 				
 			this.getRouter().navTo("OverflowToolbar");
 		},

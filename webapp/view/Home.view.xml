@@ -36,7 +36,7 @@
 							size="2.5rem"
 							color="Default"/>
 						<Title
-							id="administrationTile"
+							id="ProcessFlowTitle"
 							text="{i18n>ProcessFlowTitle}"
 							level="H3"
 							titleStyle="H2"
@@ -52,7 +52,7 @@
 							text="{i18n>learnLink}" 
 							target="_blank"
 				            href="https://consetto.com/en/about-us/"
-							tooltip="{i18n>learnAdministrationTooltip}"/>
+							tooltip="{i18n>learnProcessFlowTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -64,7 +64,7 @@
 							size="2.5rem"
 							color="Default"/>
 						<Title
-							id="productTile"
+							id="productionTitle"
 							text="{i18n>productionTitle}"
 							level="H3"
 							titleStyle="H2"
@@ -80,7 +80,7 @@
 							text="{i18n>learnLink}"
 							target="_blank"
 				            href="https://consetto.com/en/"
-							tooltip="{i18n>learnProductsTooltip}"/>
+							tooltip="{i18n>learnProductionTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -107,7 +107,7 @@
 							text="{i18n>learnLink}"
 							target="_blank"   
 				            href=" https://consetto.com/en/enterprise-planning/"
-							tooltip="{i18n>learnRevenueTooltip}"/>
+							tooltip="{i18n>learnPredictiveForecastTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -134,7 +134,7 @@
 							text="{i18n>learnLink}" 
 							target="_blank"   
 				            href=" https://consetto.com/en/abap-development/"
-							tooltip="{i18n>learnSuppliersTooltip}"/>
+							tooltip="{i18n>learnLogisticsTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
@@ -144,7 +144,7 @@
 					backgroundColorShade="ShadeB">
 					<l:VerticalLayout>
 						<core:Icon
-							src="sap-icon://thumb-up"
+							src="sap-icon://expense-report"
 							size="2.5rem"
 							color="Default"/>
 						<Title
@@ -164,7 +164,7 @@
 								target="_blank"   
 				            href="  https://consetto.com/en/enterprise-applications/"
 				           
-							tooltip="{i18n>learnSocialMediaTooltip}"/>
+							tooltip="{i18n>learnFinancialDashboardTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
