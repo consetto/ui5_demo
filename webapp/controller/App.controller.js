@@ -79,14 +79,19 @@ sap.ui.define([
 			var oItem = oEvent.getParameter('item');  
 			var sKey = oItem.getKey();
 			// if you click on home, settings or statistics button, call the navTo function
-			if ((sKey === "home" || sKey === "masterSettings" || sKey === "statistics"|| sKey === "Launchpad")) {
+			if ((sKey === "home" || sKey === "statistics"|| sKey === "Launchpad")) {
 				// if the device is phone, collaps the navigation side of the app to give more space
 				if (Device.system.phone) {
 					this.onSideNavButtonPress();
 				}
 				this.getRouter().navTo(sKey);
-			} else if (sKey === "ImportantLinks")
-			{window.open("https://consetto.com/en/enterprise-applications/","_blank");}
+			} else if (sKey === "UI5")
+		{	window.open("https://consetto.com/en/enterprise-applications/","_blank");}
+			else if (sKey === "ABAP")
+			{	window.open("https://consetto.com/en/abap-development/","_blank");}
+				else if(sKey === "EnterprisePlanning")
+			{	window.open("https://consetto.com/en/enterprise-planning/","_blank");}		
+				
 			else{
 				MessageToast.show(sKey);
 			}

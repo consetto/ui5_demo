@@ -104,19 +104,6 @@
 					"target": "home"
 				},
 				{
-					"pattern": "MasterSettings",
-					"name": "masterSettings",
-					"target": [
-						"detailSettings",
-						"masterSettings"
-					]
-				},
-				{
-					"pattern": "SystemSettings",
-					"name": "systemSettings",
-					"target": "detailSettings"
-				},
-				{
 					"pattern": "Statistics",
 					"name": "statistics",
 					"target": "statistics"
@@ -205,20 +192,6 @@
 				"appSettings": {
 					"viewId": "appSettings",
 					"viewName": "settings.AppSettings"
-				},
-				"masterSettings": {
-					"viewId": "masterSettings",
-					"viewName": "settings.MasterSettings",
-					"controlId": "appSettings",
-					"controlAggregation": "masterPages",
-					"parent": "appSettings"
-				},
-				"detailSettings": {
-					"viewId": "detailSettings",
-					"viewName": "settings.DetailSettings",
-					"controlId": "appSettings",
-					"controlAggregation": "detailPages",
-					"parent": "appSettings"
 				},
 				"statistics": {
 					"viewId": "statistics",
