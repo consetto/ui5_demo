@@ -68,6 +68,8 @@ sap.ui.define([
 					this._bExpanded = (oDevice.name === "Desktop");
 				}
 			}.bind(this));
+			var oEmployeeModel = new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.toolpageapp.model", "/employee.json"));
+			this.getView().setModel(oEmployeeModel, "EmployeeModel");
 		},
 
 		/**
@@ -147,6 +149,29 @@ sap.ui.define([
 			// forward compact/cozy style into dialog
 			syncStyleClass(this.getView().getController().getOwnerComponent().getContentDensityClass(), this.getView(), oActionSheet);
 			oActionSheet.openBy(oEvent.getSource());
+		},
+		openQuickViewEmployee: function (oEvent) {
+			var oButton = oEvent.getSource();
+			var oModel = this.getView().getModel("EmployeeModel");
+			if (!this._oQuickView) {
+				Fragment.load({
+					name: "sap.ui.demo.toolpageapp.view.fragments.QuickViewEmployee",
+					controller: this
+				}).then(function (oQuickView) {
+					this._oQuickView = oQuickView;
+					this._configEmployeeQuickView(oModel);
+					this._oQuickView.openBy(oButton,sap.m.PlacementType.Left);
+				}.bind(this));
+			} else {
+				this._configEmployeeQuickView(oModel);
+				this._oQuickView.openBy(oButton,sap.m.PlacementType.Left);
+			}
+
+		},
+		_configEmployeeQuickView: function (oModel) {
+			this.getView().addDependent(this._oQuickView);
+			this._oQuickView.close();
+			this._oQuickView.setModel(oModel);
 		},
 
 		onSideNavButtonPress: function() {
