@@ -1,0 +1,49 @@
+{
+	"pages": [
+		{
+			"pageId": "employeePageId",
+			"header": "Employee Info",
+			"icon": "images/consettoTeam/Michael.jpg",
+			"title": "Michael Scharf",
+			"description": "Account Manager",
+			"groups": [
+				{
+					"heading": "Contact Details",
+					"elements": [
+						{
+							"label": "Mobile",
+							"value": "+4961514609655",
+							"elementType": "mobile"
+						},
+						{
+							"label": "Phone",
+							"value": "+4961514609655",
+							"elementType": "phone"
+						},
+						{
+							"label": "Email",
+							"value": "kontakt@consetto.com",
+							"emailSubject": "advise",
+							"elementType": "email"
+						}
+					]
+				},
+				{
+					"heading": "Company",
+					"elements": [
+						{
+							"label": "Name",
+							"value": "Consetto GMBH",
+							"url": "https://consetto.com",
+							"elementType": "link"
+						},
+						{
+							"label": "Address",
+							"value": "Hilpertstraße 31 64295 Darmstadt"
+						}
+					]
+				}
+			]
+		}
+	]
+}

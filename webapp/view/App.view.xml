@@ -49,7 +49,7 @@
 					id="userButton"
 					text="{i18n>userName}"
 					type="Transparent"
-					press=".onUserNamePress">
+					press=".openQuickViewEmployee">
 					<layoutData>
 						<OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
 					</layoutData>
