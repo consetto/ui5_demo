@@ -48,11 +48,7 @@
 							text="{i18n>accessLink}" 
 								press="handleLinkPressprocessFlow3"
 							tooltip="{i18n>accessAdministrationLink}"/>
-						<Link
-							text="{i18n>learnLink}" 
-							target="_blank"
-				            href="https://consetto.com/en/about-us/"
-							tooltip="{i18n>learnProcessFlowTooltip}"/>
+					
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -76,11 +72,6 @@
 							text="{i18n>accessLink}"
 							press="handleLinkPressprocessFlow"
 							tooltip="{i18n>accessProductsLink}"/>
-						<Link
-							text="{i18n>learnLink}"
-							target="_blank"
-				            href="https://consetto.com/en/"
-							tooltip="{i18n>learnProductionTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -103,11 +94,6 @@
 							text="{i18n>accessLink}"
 							press="handleLinkPressPredictiveForecast"
 							tooltip="{i18n>accessRevenueLink}"/>
-						<Link  
-							text="{i18n>learnLink}"
-							target="_blank"   
-				            href=" https://consetto.com/en/enterprise-planning/"
-							tooltip="{i18n>learnPredictiveForecastTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -130,11 +116,6 @@
 							text="{i18n>accessLink}"
 							press="handleLinkPressDeliveryRoute"
 							tooltip="{i18n>accessSuppliersLink}"/>
-						<Link
-							text="{i18n>learnLink}" 
-							target="_blank"   
-				            href=" https://consetto.com/en/abap-development/"
-							tooltip="{i18n>learnLogisticsTooltip}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
@@ -155,16 +136,10 @@
 						<Text
 							text="{i18n>FinancialDashboardContent}"
 							class="sapUiTinyMarginBottom"/>
-						<Link
+					<!--	<Link
 							text="{i18n>accessLink}"
 							press="handleLinkPressFinancialDashboard"
-							tooltip="{i18n>accessSocialLink}"/>
-						<Link
-							text="{i18n>learnLink}" 
-								target="_blank"   
-				            href="  https://consetto.com/en/enterprise-applications/"
-				           
-							tooltip="{i18n>learnFinancialDashboardTooltip}"/>
+							tooltip="{i18n>accessSocialLink}"/>-->
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -177,43 +152,33 @@
 						<headerToolbar>
 							<Toolbar design="Transparent">
 								<Title
-									text="{i18n>customerOverviewTitle}"
+									text="{i18n>ProjectOverviewTitle}"
 									level="H3"/>
 							</Toolbar>
 						</headerToolbar>
 							<columns>
 								<Column>
-									<Text text="{i18n>customerName}"/>
+									<Text text="{i18n>TeamMemberName}"/>
 								</Column>
 								<Column minScreenWidth="Tablet">
-									<Text text="{i18n>productId}"/>
-								</Column>
-								<Column minScreenWidth="Desktop" hAlign="End">
-									<Text text="{i18n>lastPurchase}"/>
+									<Text text="{i18n>Task}"/>
 								</Column>
 								<Column hAlign="Center">
-									<Text text="{i18n>payment}"/>
+									<Text text="{i18n>status}"/>
 								</Column>
 								<Column hAlign="End">
-									<Text text="{i18n>amount}"/>
+									<Text text="{i18n> Deadline}"/>
 								</Column>
 							</columns>
 							<items>
 								<ColumnListItem>
 									<cells>
 										<Text text="{customer>name}"/>
-										<Text text="{customer>productId}"/>
-										<Text text="{customer>lastPurchase}"/>
+										<Text text="{customer>Task}"/>
 										<ObjectNumber
-											number="{customer>payment}"
+											number="{customer>Status }"
 											state="{customer>state}"/>
-										<ObjectNumber
-											number="{
-												parts:[{path:'customer>amount'},{path:'customer>currencyCode'}],
-												type: 'sap.ui.model.type.Currency',
-												formatOptions: {showMeasure: false}
-											}"
-											unit="{customer>currencyCode}" />
+										<Text text="{customer>Deadline}"/>
 									</cells>
 								</ColumnListItem>
 							</items>
