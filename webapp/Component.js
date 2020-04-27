@@ -26,7 +26,7 @@ sap.ui.define([
 			if (oPrevHash !== undefined) {
 				window.history.go(-1);
 			} else {
-				this.getRouter().navTo("masterSettings", {}, true);
+				this.getRouter().navTo("home", {}, true);
 			}
 		},
 
