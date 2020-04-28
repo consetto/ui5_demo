@@ -95,6 +95,9 @@ sap.ui.define([
 			{	window.open("https://consetto.com/"+lang+"/leistungen/abap-entwicklung/","_blank");}
 				else if(sKey === "EnterprisePlanning")
 			{	window.open("https://consetto.com/"+lang+"/leistungen/enterprise-planning/","_blank");}		
+				else if(sKey === "Imprint")
+			{	window.open("https://consetto.com/"+lang+"/impressum/","_blank");}	
+		
 				
 			else{
 				MessageToast.show(sKey);
