@@ -23,14 +23,6 @@
 					"priority": "Low",
 					"icon": "sap-icon://message-success"
 				}
-			],
-			"errors": [
-				{
-					"title": "Password Error",
-					"subTitle": "invalid password",
-					"description": "User S700 exceeded number of tries to enter password",
-					"counter": 1
-				}
 			]
 		}
 
