@@ -120,5 +120,6 @@ div.sapSuiteLMCLeftBottomLabel.sapSuiteLMCLabel
 /********************************************************* End Style for Dashboard **************************************************************/
 
 .sapMQuickViewPage .sapUiIcon {
-    width:100% !important;
+	width: 50% !important;
+    height: 50% !important;
 }

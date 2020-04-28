@@ -3,7 +3,7 @@
 		{
 			"pageId": "employeePageId",
 			"header": "Contact Us",
-			"icon": "images/Logo.png",
+			"icon": "images/Logo-square.png",
 			"groups": [
 				{
 					"heading": "Contact Details",
@@ -22,11 +22,11 @@
 					]
 				},
 				{
-					"heading": "Company",
+					"heading": "",
 					"elements": [
 						{
 							"label": "Website",
-							"value": "Consetto GMBH",
+							"value": "Consetto GmbH",
 							"url": "https://consetto.com",
 							"elementType": "link"
 						},
