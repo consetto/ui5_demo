@@ -8,7 +8,7 @@
 					<OverflowToolbar id="otbSubheader">
 						<Button text="Choose Company" press="handleOpenDialog" icon="sap-icon://filter-fields"/>
 						<ToolbarSpacer/>
-						<SearchField id="month" liveChange="onFilter">
+						<SearchField placeholder="Search" id="month" liveChange="onFilter">
 							<layoutData><OverflowToolbarLayoutData minWidth="200px" maxWidth="300px" shrinkable="true"/></layoutData>
 						</SearchField>
 						<Button text="Reset" type="Transparent" press="onReset"/>

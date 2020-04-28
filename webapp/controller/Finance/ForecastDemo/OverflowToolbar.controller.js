@@ -173,7 +173,7 @@ sap.ui.define([
 			this.getView().addDependent(oPersonalizationDialog);
 			oPersonalizationDialog.setContentHeight("7%");
 			oPersonalizationDialog.setContentWidth("40%");
-			oPersonalizationDialog.setTitle("Gesellschaft");
+			oPersonalizationDialog.setTitle("Company");
 			oPersonalizationDialog.open();
 			switch (this.sGesellschaft) {
 				case "Company North":
