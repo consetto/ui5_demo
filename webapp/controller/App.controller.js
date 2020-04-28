@@ -78,6 +78,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent The item select event
 		 */
 		onItemSelect: function(oEvent) {
+			var lang = sap.ui.getCore().getConfiguration().getLanguage().substring(0, 2);
 			var oItem = oEvent.getParameter('item');  
 			var sKey = oItem.getKey();
 			// if you click on home, settings or statistics button, call the navTo function
@@ -88,11 +89,12 @@ sap.ui.define([
 				}
 				this.getRouter().navTo(sKey);
 			} else if (sKey === "UI5")
-		{	window.open("https://consetto.com/en/enterprise-applications/","_blank");}
+		{	
+			window.open("https://consetto.com/"+lang+"/leistungen/enterprise-apps/","_blank");}
 			else if (sKey === "ABAP")
-			{	window.open("https://consetto.com/en/abap-development/","_blank");}
+			{	window.open("https://consetto.com/"+lang+"/leistungen/abap-entwicklung/","_blank");}
 				else if(sKey === "EnterprisePlanning")
-			{	window.open("https://consetto.com/en/enterprise-planning/","_blank");}		
+			{	window.open("https://consetto.com/"+lang+"/leistungen/enterprise-planning/","_blank");}		
 				
 			else{
 				MessageToast.show(sKey);

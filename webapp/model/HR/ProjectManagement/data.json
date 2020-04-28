@@ -9,8 +9,8 @@
         "name": "Concept Phase",
         "order": [
           {
-            "startTime": "20180101000000",
-            "endTime": "20180125000000",
+            "startTime": "20150101000000",
+            "endTime": "20150125000000",
             "level": "1"
           }
         ],
@@ -31,8 +31,8 @@
             "name": "Detailed Project Planning",
             "order": [
               {
-                "startTime": "20180101000000",
-                "endTime": "20180123000000",
+                "startTime": "20150101000000",
+                "endTime": "20150123000000",
                 "level": "2"
               }
             ]
@@ -43,8 +43,8 @@
             "name": "Kick Off Concept Phase",
             "order": [
               {
-                "startTime": "20180105000000",
-                "endTime": "20180106000000",
+                "startTime": "20150105000000",
+                "endTime": "20150106000000",
                 "level": "2"
               }
             ]
@@ -55,8 +55,8 @@
             "name": "Create Engineering Change Number",
             "order": [
               {
-                "startTime": "20180106000000",
-                "endTime": "20180108000000",
+                "startTime": "20150106000000",
+                "endTime": "20150108000000",
                 "level": "2"
               }
             ]
@@ -67,8 +67,8 @@
             "name": "Define High Level Product Structure",
             "order": [
               {
-                "startTime": "20180108000000",
-                "endTime": "20180113000000",
+                "startTime": "20150108000000",
+                "endTime": "20150113000000",
                 "level": "2"
               }
             ]
@@ -79,17 +79,17 @@
             "name": "Develop Design Concept",
             "order": [
               {
-                "startTime": "20180113000000",
-                "endTime": "20180123000000",
+                "startTime": "20150113000000",
+                "endTime": "20150123000000",
                 "level": "2"
               }
             ],
             "constraint": [{
-            	"time" : "20180113000000",
+            	"time" : "20150113000000",
             	"tooltip": "constraint",
             	"ratationAngle": 0
             },{
-            	"time" : "20180123000000",
+            	"time" : "20150123000000",
             	"tooltip": "constraint",
             	"ratationAngle": 180
             }],
@@ -100,8 +100,8 @@
                 "name": "Frame",
                 "order": [
                   {
-                    "startTime": "20180113000000",
-                    "endTime": "20180123000000",
+                    "startTime": "20150113000000",
+                    "endTime": "20150123000000",
                     "level": "2"
                   }
                 ]
@@ -112,8 +112,8 @@
                 "name": "Chasis",
                 "order": [
                   {
-                    "startTime": "20180113000000",
-                    "endTime": "20180123000000",
+                    "startTime": "20150113000000",
+                    "endTime": "20150123000000",
                     "level": "2"
                   }
                 ]
@@ -124,8 +124,8 @@
                 "name": "Engine",
                 "order": [
                   {
-                    "startTime": "20180113000000",
-                    "endTime": "20180123000000",
+                    "startTime": "20150113000000",
+                    "endTime": "20150123000000",
                     "level": "2"
                   }
                 ]
@@ -137,14 +137,14 @@
             "level": "01",
             "name": "Create Business Plan",
             "constraint": [{
-            	"time" : "20180116000000",
+            	"time" : "20150116000000",
             	"tooltip": "constraint",
             	"ratationAngle": 180
             }],
             "order": [
               {
-                "startTime": "20180106000000",
-                "endTime": "20180116000000",
+                "startTime": "20150106000000",
+                "endTime": "20150116000000",
                 "level": "2"
               }
             ]
@@ -155,8 +155,8 @@
             "name": "Update Project Plan",
             "order": [
               {
-                "startTime": "20180106000000",
-                "endTime": "20180108000000",
+                "startTime": "20150106000000",
+                "endTime": "20150108000000",
                 "level": "2"
               }
             ]
@@ -167,8 +167,8 @@
             "name": "Release Concept",
             "order": [
               {
-                "startTime": "20180124000000",
-                "endTime": "20180124000000",
+                "startTime": "20150124000000",
+                "endTime": "20150124000000",
                 "level": "2"
               }
             ]
@@ -179,8 +179,8 @@
             "name": "Freeze Documents",
             "order": [
               {
-                "startTime": "20180124000000",
-                "endTime": "20180125000000",
+                "startTime": "20150124000000",
+                "endTime": "20150125000000",
                 "level": "2"
               }
             ]
@@ -191,8 +191,8 @@
             "name": "Adjust Project Staffing",
             "order": [
               {
-                "startTime": "20180124000000",
-                "endTime": "20180125000000",
+                "startTime": "20150124000000",
+                "endTime": "20150125000000",
                 "level": "2"
               }
             ]
@@ -203,14 +203,14 @@
             "name": "Go to Design",
             "milestone": [
               {
-                "endTime": "20180125000000",
+                "endTime": "20150125000000",
                 "level": "2",
                 "tooltip": "milestone"
               }
              ],
             "order": [
               {
-                "endTime": "20180125000000",
+                "endTime": "20150125000000",
                 "level": "2"
               }
             ]
@@ -223,8 +223,8 @@
         "name": "Design Phase",
         "order": [
           {
-            "startTime": "2018012500000",
-            "endTime": "20180311000000",
+            "startTime": "2015012500000",
+            "endTime": "20150311000000",
             "level": "1"
           }
         ],
@@ -245,8 +245,8 @@
             "name": "Kick-off Design Phase",
             "order": [
               {
-                "startTime": "20180125000000",
-                "endTime": "20180126000000",
+                "startTime": "20150125000000",
+                "endTime": "20150126000000",
                 "level": "2"
               }
             ]
@@ -257,8 +257,8 @@
             "name": "Create Engineering Change Number",
             "order": [
               {
-                "startTime": "20180126000000",
-                "endTime": "20180128000000",
+                "startTime": "20150126000000",
+                "endTime": "20150128000000",
                 "level": "2"
               }
             ]
@@ -269,8 +269,8 @@
             "name": "Prepare Detailed Design",
             "order": [
               {
-                "startTime": "20180128000000",
-                "endTime": "20180207000000",
+                "startTime": "20150128000000",
+                "endTime": "20150207000000",
                 "level": "2"
               }
             ]
@@ -281,8 +281,8 @@
             "name": "Develop Detailed Design",
             "order": [
               {
-                "startTime": "20180207000000",
-                "endTime": "20180309000000",
+                "startTime": "20150207000000",
+                "endTime": "20150309000000",
                 "level": "2"
               }
             ],
@@ -293,8 +293,8 @@
                 "name": "Frame",
                 "order": [
                   {
-                    "startTime": "20180207000000",
-                    "endTime": "20180309000000",
+                    "startTime": "20150207000000",
+                    "endTime": "20150309000000",
                     "level": "2"
                   }
                 ]
@@ -305,8 +305,8 @@
                 "name": "Chasis",
                 "order": [
                   {
-                    "startTime": "20180207000000",
-                    "endTime": "20180309000000",
+                    "startTime": "20150207000000",
+                    "endTime": "20150309000000",
                     "level": "2"
                   }
                 ]
@@ -317,8 +317,8 @@
                 "name": "Engine",
                 "order": [
                   {
-                    "startTime": "20180207000000",
-                    "endTime": "20180309000000",
+                    "startTime": "20150207000000",
+                    "endTime": "20150309000000",
                     "level": "2"
                   }
                 ]
@@ -331,8 +331,8 @@
             "name": "Update Business Plan",
             "order": [
               {
-                "startTime": "20180126000000",
-                "endTime": "20180205000000",
+                "startTime": "20150126000000",
+                "endTime": "20150205000000",
                 "level": "2"
               }
             ]
@@ -343,8 +343,8 @@
             "name": "Create Sourcing Plan",
             "order": [
               {
-                "startTime": "20180205000000",
-                "endTime": "20180215000000",
+                "startTime": "20150205000000",
+                "endTime": "20150215000000",
                 "level": "2"
               }
             ]
@@ -355,8 +355,8 @@
             "name": "Update Project Plan",
             "order": [
               {
-                "startTime": "20180126000000",
-                "endTime": "20180129000000",
+                "startTime": "20150126000000",
+                "endTime": "20150129000000",
                 "level": "2"
               }
             ]
@@ -367,8 +367,8 @@
             "name": "Release Design",
             "order": [
               {
-                "startTime": "20180309000000",
-                "endTime": "20180310000000",
+                "startTime": "20150309000000",
+                "endTime": "20150310000000",
                 "level": "2"
               }
             ]
@@ -379,8 +379,8 @@
             "name": "Freeze Documents",
             "order": [
               {
-                "startTime": "20180310000000",
-                "endTime": "20180311000000",
+                "startTime": "20150310000000",
+                "endTime": "20150311000000",
                 "level": "2"
               }
             ]
@@ -391,8 +391,8 @@
             "name": "Adjust Project Staffing",
             "order": [
               {
-                "startTime": "20180310000000",
-                "endTime": "20180311000000",
+                "startTime": "20150310000000",
+                "endTime": "20150311000000",
                 "level": "2"
               }
             ]
@@ -405,8 +405,8 @@
         "name": "Validation Phase",
         "order": [
           {
-            "startTime": "2018031100000",
-            "endTime": "20180430000000",
+            "startTime": "2015031100000",
+            "endTime": "20150430000000",
             "level": "1"
           }
         ],
@@ -427,8 +427,8 @@
             "name": "Kick-off Validation Phase",
             "order": [
               {
-                "startTime": "20180311000000",
-                "endTime": "20180312000000",
+                "startTime": "20150311000000",
+                "endTime": "20150312000000",
                 "level": "2"
               }
             ]
@@ -439,8 +439,8 @@
             "name": "Create Validation Models",
             "order": [
               {
-                "startTime": "20180312000000",
-                "endTime": "20180314000000",
+                "startTime": "20150312000000",
+                "endTime": "20150314000000",
                 "level": "2"
               }
             ]
@@ -451,8 +451,8 @@
             "name": "Digital Validation",
             "order": [
               {
-                "startTime": "20180314000000",
-                "endTime": "20180403000000",
+                "startTime": "20150314000000",
+                "endTime": "20150403000000",
                 "level": "2"
               }
             ]
@@ -463,8 +463,8 @@
             "name": "Physical Validation",
             "order": [
               {
-                "startTime": "20180403000000",
-                "endTime": "20180423000000",
+                "startTime": "20150403000000",
+                "endTime": "20150423000000",
                 "level": "2"
               }
             ]
@@ -475,8 +475,8 @@
             "name": "Review Validation Results",
             "order": [
               {
-                "startTime": "20180423000000",
-                "endTime": "20180428000000",
+                "startTime": "20150423000000",
+                "endTime": "20150428000000",
                 "level": "2"
               }
             ]
@@ -487,8 +487,8 @@
             "name": "Update Business Plan",
             "order": [
               {
-                "startTime": "20180312000000",
-                "endTime": "20180317000000",
+                "startTime": "20150312000000",
+                "endTime": "20150317000000",
                 "level": "2"
               }
             ]
@@ -499,8 +499,8 @@
             "name": "Update Sourcing Plan",
             "order": [
               {
-                "startTime": "20180312000000",
-                "endTime": "20180314000000",
+                "startTime": "20150312000000",
+                "endTime": "20150314000000",
                 "level": "2"
               }
             ]
@@ -511,8 +511,8 @@
             "name": "Update Project Plan",
             "order": [
               {
-                "startTime": "20180312000000",
-                "endTime": "20180314000000",
+                "startTime": "20150312000000",
+                "endTime": "20150314000000",
                 "level": "2"
               }
             ]
@@ -523,8 +523,8 @@
             "name": "Release Product",
             "order": [
               {
-                "startTime": "20180428000000",
-                "endTime": "20180429000000",
+                "startTime": "20150428000000",
+                "endTime": "20150429000000",
                 "level": "2"
               }
             ]
@@ -535,8 +535,8 @@
             "name": "Freeze Documents",
             "order": [
               {
-                "startTime": "20180429000000",
-                "endTime": "20180430000000",
+                "startTime": "20150429000000",
+                "endTime": "20150430000000",
                 "level": "2"
               }
             ]
@@ -547,8 +547,8 @@
             "name": "Adjust Project Staffing",
             "order": [
               {
-                "startTime": "20180429000000",
-                "endTime": "20180430000000",
+                "startTime": "20150429000000",
+                "endTime": "20150430000000",
                 "level": "2"
               }
             ]
@@ -561,8 +561,8 @@
         "name": "Production Preparation",
         "order": [
           {
-            "startTime": "2018043000000",
-            "endTime": "20180612000000",
+            "startTime": "2015043000000",
+            "endTime": "20150612000000",
             "level": "1"
           }
         ],
@@ -583,8 +583,8 @@
             "name": "Kick-off Production Prep. Phase",
             "order": [
               {
-                "startTime": "20180430000000",
-                "endTime": "20180501000000",
+                "startTime": "20150430000000",
+                "endTime": "20150501000000",
                 "level": "2"
               }
             ]
@@ -595,8 +595,8 @@
             "name": "Design Routings",
             "order": [
               {
-                "startTime": "20180501000000",
-                "endTime": "20180521000000",
+                "startTime": "20150501000000",
+                "endTime": "20150521000000",
                 "level": "2"
               }
             ]
@@ -607,8 +607,8 @@
             "name": "Prepare Production Data",
             "order": [
               {
-                "startTime": "20180521000000",
-                "endTime": "20180531000000",
+                "startTime": "20150521000000",
+                "endTime": "20150531000000",
                 "level": "2"
               }
             ]
@@ -619,8 +619,8 @@
             "name": "Handover to Production",
             "order": [
               {
-                "startTime": "20180531000000",
-                "endTime": "20180610000000",
+                "startTime": "20150531000000",
+                "endTime": "20150610000000",
                 "level": "2"
               }
             ]
@@ -631,8 +631,8 @@
             "name": "Release Production",
             "order": [
               {
-                "startTime": "20180610000000",
-                "endTime": "20180611000000",
+                "startTime": "20150610000000",
+                "endTime": "20150611000000",
                 "level": "2"
               }
             ]
@@ -643,8 +643,8 @@
             "name": "Close Production",
             "order": [
               {
-                "startTime": "20180611000000",
-                "endTime": "20180612000000",
+                "startTime": "20150611000000",
+                "endTime": "20150612000000",
                 "level": "2"
               }
             ]
@@ -1126,79 +1126,79 @@
 		{
 			"id": "nwtForAWeek",
 			"data": [{
-					"startTime": "20180501141533", 
-					"endTime": "20180507141533"
+					"startTime": "20150501141533", 
+					"endTime": "20150507141533"
 				}
 			]
 		},{
 			"id": "nwtForWeekends",
 			"data": [
 				{
-					"startTime": "20180103141533", 
-					"endTime": "20180104141533"
+					"startTime": "20150103141533", 
+					"endTime": "20150104141533"
 				},{
-					"startTime": "20180110141533", 
-					"endTime": "20180111141533"
+					"startTime": "20150110141533", 
+					"endTime": "20150111141533"
 				},{
-					"startTime": "20180117141533", 
-					"endTime": "20180118141533"
+					"startTime": "20150117141533", 
+					"endTime": "20150118141533"
 				},{
-					"startTime": "20180124141533", 
-					"endTime": "20180125141533"
+					"startTime": "20150124141533", 
+					"endTime": "20150125141533"
 				},{
-					"startTime": "20180131141533", 
-					"endTime": "20180201141533"
+					"startTime": "20150131141533", 
+					"endTime": "20150201141533"
 				},{
-					"startTime": "20180207141533", 
-					"endTime": "20180208141533"
+					"startTime": "20150207141533", 
+					"endTime": "20150208141533"
 				},{
-					"startTime": "20180214141533", 
-					"endTime": "20180215141533"
+					"startTime": "20150214141533", 
+					"endTime": "20150215141533"
 				},{
-					"startTime": "20180221141533", 
-					"endTime": "20180222141533"
+					"startTime": "20150221141533", 
+					"endTime": "20150222141533"
 				},{
-					"startTime": "20180228141533", 
-					"endTime": "20180301141533"
+					"startTime": "20150228141533", 
+					"endTime": "20150301141533"
 				},{
-					"startTime": "20180307141533", 
-					"endTime": "20180308141533"
+					"startTime": "20150307141533", 
+					"endTime": "20150308141533"
 				},{
-					"startTime": "20180314141533", 
-					"endTime": "20180315141533"
+					"startTime": "20150314141533", 
+					"endTime": "20150315141533"
 				},{
-					"startTime": "20180321141533", 
-					"endTime": "20180322141533"
+					"startTime": "20150321141533", 
+					"endTime": "20150322141533"
 				},{
-					"startTime": "20180328141533", 
-					"endTime": "20180329141533"
+					"startTime": "20150328141533", 
+					"endTime": "20150329141533"
 				},{
-					"startTime": "20180404141533", 
-					"endTime": "20180405141533"
+					"startTime": "20150404141533", 
+					"endTime": "20150405141533"
 				},{
-					"startTime": "20180411141533", 
-					"endTime": "20180412141533"
+					"startTime": "20150411141533", 
+					"endTime": "20150412141533"
 				},{
-					"startTime": "20180418141533", 
-					"endTime": "20180419141533"
+					"startTime": "20150418141533", 
+					"endTime": "20150419141533"
 				},{
-					"startTime": "20180425141533", 
-					"endTime": "20180426141533"
+					"startTime": "20150425141533", 
+					"endTime": "20150426141533"
 				},{
-					"startTime": "20180509141533", 
-					"endTime": "20180510141533"
+					"startTime": "20150509141533", 
+					"endTime": "20150510141533"
 				},{
-					"startTime": "20180516141533", 
-					"endTime": "20180517141533"
+					"startTime": "20150516141533", 
+					"endTime": "20150517141533"
 				},{
-					"startTime": "20180523141533", 
-					"endTime": "20180524141533"
+					"startTime": "20150523141533", 
+					"endTime": "20150524141533"
 				},{
-					"startTime": "20180530141533", 
-					"endTime": "20180531141533"
+					"startTime": "20150530141533", 
+					"endTime": "20150531141533"
 				},{
-					"startTime": "20180606141533", 
-					"endTime": "20180607141533"
+					"startTime": "20150606141533", 
+					"endTime": "20150607141533"
 				}
 			]
 		}

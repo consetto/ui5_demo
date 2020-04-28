@@ -1,87 +1,117 @@
 sap.ui.define([
+	"jquery.sap.global",
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
-	"sap/m/MessageToast"
-], function (Controller, JSONModel, MessageToast) {
+	"sap/gantt/def/cal/Calendar",
+	"sap/gantt/def/cal/CalendarDefs",
+	"sap/gantt/def/cal/TimeInterval",
+	"sap/gantt/config/TimeHorizon",
+	"sap/gantt/axistime/ProportionZoomStrategy",
+	"sap/gantt/shape/Group",
+	"sap/gantt/shape/Rectangle",
+	"sap/gantt/shape/SelectedShape",
+	"sap/gantt/shape/ext/Diamond",
+	"sap/gantt/shape/ext/Triangle",
+	"sap/m/MessageToast",
+	"sap/ui/table/plugins/MultiSelectionPlugin",
+	"sap/gantt/shape/ext/rls/Relationship",
+	"sap/gantt/shape/cal/Calendar"
+], function (
+	jQuery,
+	Controller,
+	JSONModel,
+	Calendar,
+	CalendarDefs,
+	TimeInterval,
+	TimeHorizon,
+	ProportionZoomStrategy,
+	Group,
+	Rectangle,
+	SelectedShape,
+	Diamond,
+	Triangle,
+	MessageToast,
+	MultiSelectionPlugin) {
 	"use strict";
-	jQuery.sap.require("sap.gantt.def.cal.Calendar");
-	jQuery.sap.require("sap.gantt.def.cal.CalendarDefs");
-	jQuery.sap.require("sap.gantt.def.cal.TimeInterval");
+	var oDarkThemes = {
+		"sap_hcb": true,
+		"sap_fiori_3_dark": true,
+		"sap_fiori_3_hcb" : true,
+		"sap_belize_hcb": true
+	};
+
 	return Controller.extend("sap.ui.demo.toolpageapp.controller.HR.ProjectManagement.BasicGanttChart", {
-		onPress: function(){
-			var ta = this._createTimeAxis1();
-			sap.ui.getCore().byId("__xmlview0--ganttView").setTimeAxis(ta);
-            sap.ui.getCore().byId("__xmlview0--GanttChartContainer").setTimeZoomRate(1);
-            sap.ui.getCore().byId("__xmlview0--ganttView").jumpToPosition(new Date("2015/01/01"));
-		},
-		
-		onInit: function() {
+		onInit: function () {
+
 			var oGanttChartContainer = this.getView().byId("GanttChartContainer");
 			var oGanttChartWithTable = oGanttChartContainer.getGanttCharts()[0];
 			var sPath = jQuery.sap.getModulePath("sap.ui.demo.toolpageapp.model.HR.ProjectManagement", "/data.json");
 			this._oModel = new JSONModel();
 			var that = this;
-			$.ajax({
+			jQuery.ajax({
 				url: sPath
-			}).then(function(data){
+			}).then(function (data) {
 				that._oModel.setData(data);
 				// configuration of GanttChartContainer
 				oGanttChartContainer.setModel(that._oModel, "test");
 				oGanttChartContainer.setLegendContainer(that._createLegendContainer());
 				oGanttChartContainer.setToolbarSchemes(that._createToolbarSchemes());
 				oGanttChartContainer.setContainerLayouts(that._createContainerLayouts());
-				oGanttChartContainer.setContainerLayoutKey("sap.test.gantt_layout");
+				oGanttChartContainer.setContainerLayoutKey("sap.gantt.sample.gantt_layout");
 				oGanttChartContainer.addCustomToolbarItem(that._createCustomToolbar());
 
 				// configuration of GanttChartWithTable
 				oGanttChartWithTable.bindAggregation("rows",
-						{
-							path: "test>/root",
-							parameters: {
-								arrayNames: ["children"]
-							}
+					{
+						path: "test>/root",
+						parameters: {
+							arrayNames: ["children"]
 						}
+					}
 				);
 				oGanttChartWithTable.bindAggregation("relationships",
-						{
-							path: "test>/root/relationship"
-						}
-				);
-				oGanttChartWithTable.setCalendarDef(new sap.gantt.def.cal.CalendarDefs({
-					defs: {
-						path: "test>/root/calendar",
-						template: new sap.gantt.def.cal.Calendar({
-							key: "{test>id}",
-							timeIntervals: {
-								path: "test>data",
-								templateShareable: true,
-								template: new sap.gantt.def.cal.TimeInterval({
-									startTime: "{test>startTime}",
-									endTime: "{test>endTime}"
-								})
-							}
-						})
+					{
+						path: "test>/root/relationship"
 					}
-				})
 				);
-				
-				oGanttChartWithTable.setTimeAxis(that._createTimeAxis());
+				oGanttChartWithTable.setCalendarDef(new CalendarDefs({
+						defs: {
+							path: "test>/root/calendar",
+							template: new Calendar({
+								key: "{test>id}",
+								timeIntervals: {
+									path: "test>data",
+									templateShareable: true,
+									template: new TimeInterval({
+										startTime: "{test>startTime}",
+										endTime: "{test>endTime}"
+									})
+								}
+							})
+						}
+					})
+				);
+
+				oGanttChartWithTable.setAxisTimeStrategy(that._createZoomStrategy());
 				oGanttChartWithTable.setShapeDataNames(["top", "order", "milestone", "constraint", "relationship", "nwt", "nwtForWeekends"]);
 				oGanttChartWithTable.setShapes(that._configShape());
-				oGanttChartWithTable.setToolbarSchemes(that._createToolbarSchemes());
+				oGanttChartWithTable.useSelectionPlugin(new MultiSelectionPlugin({limit: 0}));
 				oGanttChartWithTable.setSelectionMode(sap.gantt.SelectionMode.Multiple);
 			});
-
-			
 		},
-		
-		onAfterRendering: function(){
-			var that = this;
-			setTimeout(function(){
-				var oGanttChartContainer = that.getView().byId("GanttChartContainer");
+
+		onExit: function () {
+			if (this._oSettingsGroup) {
+				this._oSettingsGroup.destroy();
+			}
+		},
+
+		onAfterRendering: function () {
+			setTimeout(function () {
+				var oGanttChartContainer = this.getView().byId("GanttChartContainer");
 				var oGanttChartWithTable = oGanttChartContainer.getGanttCharts()[0];
 				oGanttChartWithTable.jumpToPosition(new Date("2015-01-01"));
-			},1000);
+			}.bind(this), 1000);
 		},
 
 		/*
@@ -89,29 +119,22 @@ sap.ui.define([
 		 * @private
 		 * @returns {Object} oToolbar
 		 */
-		_createCustomToolbar: function() {
-			var that = this;
-			var oToolbar = new sap.m.Toolbar({
+		_createCustomToolbar: function () {
+			return new sap.m.Toolbar({
 				content: [
 					new sap.m.Link({
 						text: "Create Task",
-						press: function() {
-							that.createTask();
-						}
+						press: this.createTask.bind(this)
 					}),
 					new sap.m.ToolbarSpacer({width: "10px"}),
 					new sap.m.Link({
 						text: "Delete Task",
-						press: function() {
-							that.deleteTask();
-						}
+						press: this.deleteTask.bind(this)
 					}),
 					new sap.m.ToolbarSpacer({width: "10px"}),
 					new sap.m.ToolbarSeparator()
 				]
 			});
-
-			return oToolbar;
 		},
 
 		/*
@@ -119,8 +142,14 @@ sap.ui.define([
 		 * @private
 		 * @returns {Array} aToolbarSchemes
 		 */
-		_createToolbarSchemes: function() {
-			var aToolbarSchemes = [
+		_createToolbarSchemes: function () {
+			this._oSettingsGroup = new sap.gantt.config.SettingGroup({
+				id: "settingsGroup",
+				position: "R1",
+				overflowPriority: sap.m.OverflowToolbarPriority.Low,
+				items: sap.gantt.config.DEFAULT_TOOLBAR_SETTING_ITEMS
+			});
+			return [
 				new sap.gantt.config.ToolbarScheme({
 					key: "GLOBAL_TOOLBAR",
 					customToolbarItems: new sap.gantt.config.ToolbarGroup({
@@ -135,19 +164,13 @@ sap.ui.define([
 						position: "R3",
 						overflowPriority: sap.m.OverflowToolbarPriority.Low
 					}),
-					settings: new sap.gantt.config.SettingGroup({
-						position: "R1",
-						overflowPriority: sap.m.OverflowToolbarPriority.Low,
-						items: sap.gantt.config.DEFAULT_TOOLBAR_SETTING_ITEMS
-					}),
+					settings: this._oSettingsGroup,
 					toolbarDesign: sap.m.ToolbarDesign.Transparent
 				}),
 				new sap.gantt.config.ToolbarScheme({
 					key: "LOCAL_TOOLBAR"
 				})
 			];
-
-			return aToolbarSchemes;
 		},
 
 		/*
@@ -155,16 +178,14 @@ sap.ui.define([
 		 * @private
 		 * @returns {Array} aContainerLayouts
 		 */
-		_createContainerLayouts: function() {
-			var aContainerLayouts = [
+		_createContainerLayouts: function () {
+			return [
 				new sap.gantt.config.ContainerLayout({
-					key: "sap.test.gantt_layout",
+					key: "sap.gantt.sample.gantt_layout",
 					text: "Gantt Layout",
 					toolbarSchemeKey: "GLOBAL_TOOLBAR"
 				})
 			];
-
-			return aContainerLayouts;
 		},
 
 		/*
@@ -172,35 +193,36 @@ sap.ui.define([
 		 * @private
 		 * @returns {Object} oLegend
 		 */
-		_createLegendContainer: function() {
+		_createLegendContainer: function () {
 			var sSumTaskColor = "#FAC364";
 			var sTasksColor = "#5CBAE5";
 			var sRelColor = "#848F94";
-			var sTextColor = sap.ui.getCore().getConfiguration().getTheme() === "sap_hcb" ? "white" : "";
+			var sTheme = sap.ui.getCore().getConfiguration().getTheme();
+			var sTextColor = oDarkThemes[sTheme] === true ? "white" : "";
 			var oLegend = new sap.gantt.legend.LegendContainer({
 				legendSections: [
 					new sap.m.Page({
 						title: "Tasks",
-						content:[
+						content: [
 							new sap.ui.core.HTML({
 								content: "<div width='100%' height='50%' style='margin-top: 25px'><svg width='180px' height='60px'><g>" +
 									"<g style='display: block;'>" +
-									"<g><rect x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "155" : "25" ) + "' y='2' width='20' height='20' fill=" + sSumTaskColor + " style='stroke: " + sSumTaskColor + "; stroke-width: 2px;'></rect>" +
-									"<text x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "125" : "55" ) + "' y='16' font-size='0.875rem' fill=" + sTextColor + ">Summary task</text></g>" +
-									"<g><rect x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "155" : "25" ) + "' y='32' width='20' height='20' fill=" + sTasksColor + " style='stroke: " + sTasksColor + "; stroke-width: 2px;'></rect>" +
-									"<text x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "125" : "55" ) + "' y='46' font-size='0.875rem' fill=" + sTextColor + ">Task</text></g>" +
+									"<g><rect x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "155" : "25") + "' y='2' width='20' height='20' fill=" + sSumTaskColor + " style='stroke: " + sSumTaskColor + "; stroke-width: 2px;'></rect>" +
+									"<text x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "125" : "55") + "' y='16' font-size='0.875rem' fill=" + sTextColor + ">Summary task</text></g>" +
+									"<g><rect x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "155" : "25") + "' y='32' width='20' height='20' fill=" + sTasksColor + " style='stroke: " + sTasksColor + "; stroke-width: 2px;'></rect>" +
+									"<text x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "125" : "55") + "' y='46' font-size='0.875rem' fill=" + sTextColor + ">Task</text></g>" +
 									"</g></g></svg></div>"
 							})
 						]
 					}),
 					new sap.m.Page({
 						title: "Relationships",
-						content:[
+						content: [
 							new sap.ui.core.HTML({
 								content: "<div width='100%' height='50%' style='margin-top: 25px'><svg width='180px' height='25px'><g>" +
 									"<g style='display: block;'>" +
-									"<g><rect x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "155" : "25" ) + "' y='8' width='20' height='1' fill=" + sRelColor + " style='stroke: " + sRelColor + "; stroke-width: 1px;'></rect>" +
-									"<text x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "125" : "55" ) + "' y='12.5' font-size='0.875rem' fill=" + sTextColor + ">Relationship</text></g>" +
+									"<g><rect x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "155" : "25") + "' y='8' width='20' height='1' fill=" + sRelColor + " style='stroke: " + sRelColor + "; stroke-width: 1px;'></rect>" +
+									"<text x='" + (sap.ui.getCore().getConfiguration().getRTL() ? "125" : "55") + "' y='12.5' font-size='0.875rem' fill=" + sTextColor + ">Relationship</text></g>" +
 									"</g></g></svg></div>"
 							})
 						]
@@ -216,13 +238,12 @@ sap.ui.define([
 		 * @private
 		 * @returns {Array} aShapes
 		 */
-		_configShape: function() {
+		_configShape: function () {
 			var aShapes = [];
 
-			sap.ui.define(["sap/gantt/shape/Group"], function (Group) {
-				var RectangleGroup = Group.extend("sap.test.RectangleGroup");
-
-				RectangleGroup.prototype.getRLSAnchors = function(oRawData, oObjectInfo) {
+			//
+			Group.extend("sap.gantt.sample.RectangleGroup", {
+				getRLSAnchors: function (oRawData, oObjectInfo) {
 					var shapes = this.getShapes();
 					var rectangleShapeClass;
 					var _x, _y;
@@ -240,69 +261,51 @@ sap.ui.define([
 						startPoint: {
 							x: _x,
 							y: _y,
-							height:rectangleShapeClass.getHeight(oRawData)
+							height: rectangleShapeClass.getHeight(oRawData)
 						},
 						endPoint: {
 							x: _x + rectangleShapeClass.getWidth(oRawData),
 							y: _y,
-							height:rectangleShapeClass.getHeight(oRawData)
+							height: rectangleShapeClass.getHeight(oRawData)
 						}
 					};
-				};
-
-				return RectangleGroup;
-			}, true);
-
-			sap.ui.define(["sap/gantt/shape/Rectangle"], function (Rectangle) {
-				var shapeRectangle = Rectangle.extend("sap.test.shapeRectangle");
-
-				shapeRectangle.prototype.getFill = function (oRawData) {
-					switch (oRawData.level) {
-					case "1":
-						return "#FAC364";
-					default:
-						return "#5CBAE5";
-					}
-				};
-
-				return shapeRectangle;
-			}, true);
-
-			sap.ui.define(["sap/gantt/shape/SelectedShape"], function (SelectedShape) {
-				var selectRectange = SelectedShape.extend("sap.test.selectRectange");
-
-				selectRectange.prototype.getStroke = function (oRawData) {
-					switch (oRawData.level) {
-					case "1":
-						return "#B57506";
-					default:
-						return "#156589";
-					}
-				};
-				selectRectange.prototype.getStrokeWidth = function () {
-					return 2;
-				};
-
-				return selectRectange;
+				}
 			});
-			
-			// define a milestone (diamond)
-			sap.ui.define(["sap/gantt/shape/ext/Diamond", "sap/ui/core/Core"], function (Diamond, Core) {
-				var milestone = Diamond.extend("sap.test.Milestone");			
-				return milestone;
-			}, true);
-			
-			// define a constraint (triangle)
-			sap.ui.define(["sap/gantt/shape/ext/Triangle", "sap/ui/core/Core"], function (Triangle, Core) {
-				var constraint = Triangle.extend("sap.test.Constraint");
-				return constraint;
-			}, true);
+
+			Rectangle.extend("sap.gantt.sample.shapeRectangle", {
+				getFill: function (oRawData) {
+					switch (oRawData.level) {
+						case "1":
+							return "#FAC364";
+						default:
+							return "#5CBAE5";
+					}
+				}
+			});
+
+			SelectedShape.extend("sap.gantt.sample.selectRectange", {
+				getStroke: function (oRowData) {
+					switch (oRowData.level) {
+						case "1":
+							return "#B57506";
+						default:
+							return "#156589";
+					}
+				},
+				getStrokeWidth: function () {
+					return 2;
+				}
+			});
+
+			Diamond.extend("sap.gantt.sample.Milestone");
+
+			Triangle.extend("sap.gantt.sample.Constraint");
 
 			var oTopShape = new sap.gantt.config.Shape({
 				key: "top",
 				shapeDataName: "order",
-				shapeClassName: "sap.test.shapeRectangle",
-				selectedClassName: "sap.test.selectRectange",
+				shapeClassName: "sap.gantt.sample.shapeRectangle",
+				selectedClassName: "sap.gantt.sample.selectRectange",
 				level: 5,
 				shapeProperties: {
 					time: "{startTime}",
@@ -316,8 +319,8 @@ sap.ui.define([
 			var oOrderShape = new sap.gantt.config.Shape({
 				key: "order",
 				shapeDataName: "order",
-				shapeClassName: "sap.test.RectangleGroup",
-				selectedClassName: "sap.test.selectRectange",
+				shapeClassName: "sap.gantt.sample.RectangleGroup",
+				selectedClassName: "sap.gantt.sample.selectRectange",
 				level: 5,
 				shapeProperties: {
 					time: "{startTime}",
@@ -328,8 +331,8 @@ sap.ui.define([
 				},
 				groupAggregation: [
 					new sap.gantt.config.Shape({
-						shapeClassName: "sap.test.shapeRectangle",
-						selectedClassName: "sap.test.selectRectange",
+						shapeClassName: "sap.gantt.sample.shapeRectangle",
+						selectedClassName: "sap.gantt.sample.selectRectange",
 						shapeProperties: {
 							time: "{startTime}",
 							endTime: "{endTime}",
@@ -344,7 +347,7 @@ sap.ui.define([
 			// define a milestone config
 			var oDiamondConfig = new sap.gantt.config.Shape({
 				key: "diamond",
-				shapeClassName: "sap.test.Milestone",
+				shapeClassName: "sap.gantt.sample.Milestone",
 				shapeDataName: "milestone",
 				level: 5,
 				shapeProperties: {
@@ -360,7 +363,7 @@ sap.ui.define([
 			// define a constraint config
 			var oTriangleConfig = new sap.gantt.config.Shape({
 				key: "triangle",
-				shapeClassName: "sap.test.Constraint",
+				shapeClassName: "sap.gantt.sample.Constraint",
 				shapeDataName: "constraint",
 				level: 5,
 				shapeProperties: {
@@ -389,12 +392,12 @@ sap.ui.define([
 					stroke: "#848F94",
 					strokeWidth: 1,
 					type: "{relation_type}",
-					fromObjectPath:"{fromObjectPath}",
-					toObjectPath:"{toObjectPath}",
-					fromDataId:"{fromDataId}",
-					toDataId:"{toDataId}",
-					fromShapeId:"{fromShapeId}",
-					toShapeId:"{toShapeId}",	
+					fromObjectPath: "{fromObjectPath}",
+					toObjectPath: "{toObjectPath}",
+					fromDataId: "{fromDataId}",
+					toDataId: "{toDataId}",
+					fromShapeId: "{fromShapeId}",
+					toShapeId: "{toShapeId}",
 					title: "{tooltip}",
 					id: "{guid}"
 				}
@@ -431,7 +434,7 @@ sap.ui.define([
 		 * @param {Object} event
 		 * @returns undefined
 		 */
-		handleDateChange: function(event) {
+		handleDateChange: function (event) {
 			var oDatePicker = event.getSource();
 			var aCells = oDatePicker.getParent().getCells();
 
@@ -448,7 +451,7 @@ sap.ui.define([
 		 * @param {Object} startCell, {Object} endCell, {Boolean} bIsChangeStart
 		 * @returns undefined
 		 */
-		_checkDate: function(startCell, endCell, bIsChangeStart) {
+		_checkDate: function (startCell, endCell, bIsChangeStart) {
 			if (bIsChangeStart === undefined) {
 				jQuery.sap.log.error("bIsChangeStart is not defined!");
 				return;
@@ -469,7 +472,7 @@ sap.ui.define([
 		 * @private
 		 * @returns undefined
 		 */
-		_showNotAllowedMsg: function() {
+		_showNotAllowedMsg: function () {
 			MessageToast.show("Not allowed");
 		},
 
@@ -479,7 +482,7 @@ sap.ui.define([
 		 * @param {Object} [oEvent] event context
 		 * @returns {Boolean} if Drag and Drop succeed
 		 */
-		handleShapeDragEnd: function(oEvent) {
+		handleShapeDragEnd: function (oEvent) {
 			var oParam = oEvent.getParameters();
 			var aSourceShapeData = oParam.sourceShapeData;
 			var oSourceShapeData = aSourceShapeData[0].shapeData;
@@ -489,17 +492,16 @@ sap.ui.define([
 			//change the form of date from millis to timestamp
 			var sTarStartTime = sap.gantt.misc.Format.dateToAbapTimestamp(new Date(oTargetData.mouseTimestamp.startTime));
 			var sTarEndTime = sap.gantt.misc.Format.dateToAbapTimestamp(new Date(oTargetData.mouseTimestamp.endTime));
-			
+
 			if (!oTargetData.objectInfo) {
 				this._showNotAllowedMsg();
 				return false;
 			}
 
 			var sTargetId = oTargetData.objectInfo.id;
-			var sId = aSourceShapeData[0].objectInfo.id;
-			
+
 			if (this._checkDropSameRow(sSourceId, sTargetId) && this._selectOnlyOneRow(aSourceShapeData)) {
-				//oSourceShapeData is a reference, so we only need to change startTime and endTime, then reset data model 
+				//oSourceShapeData is a reference, so we only need to change startTime and endTime, then reset data model
 				oSourceShapeData.startTime = sTarStartTime;
 				oSourceShapeData.endTime = sTarEndTime;
 				var oModelData = this._oModel.getData();
@@ -518,7 +520,7 @@ sap.ui.define([
 		 * @param {String} [sTargetId] target id
 		 * @returns {Boolean} if drop the selected task in the same row
 		 */
-		_checkDropSameRow: function(sSourceId, sTargetId) {
+		_checkDropSameRow: function (sSourceId, sTargetId) {
 			if (sSourceId === sTargetId) {
 				return true;
 			} else {
@@ -532,7 +534,7 @@ sap.ui.define([
 		 * @param {Array} [aSourceShapeData] array of source data
 		 * @returns {Boolean} if only select one row of chart
 		 */
-		_selectOnlyOneRow: function(aSourceShapeData) {
+		_selectOnlyOneRow: function (aSourceShapeData) {
 			if (aSourceShapeData.length === 1) {
 				return true;
 			} else {
@@ -541,220 +543,113 @@ sap.ui.define([
 		},
 
 		/*
-		 * Create TimeAxis
+		 * Create Zoom Strategy
 		 * @private
-		 * @returns {Object} oTimeAxis
+		 * @returns {Object} oZoomStrategy
 		 */
-		_createTimeAxis: function() {
-			var oTimeAxis = new sap.gantt.config.TimeAxis({
-				planHorizon: new sap.gantt.config.TimeHorizon({
-					startTime: "20171228000000",
-					endTime: "20190101000000"
+		_createZoomStrategy: function () {
+			var oTimeLineOptions = {
+				"1day": {
+					innerInterval: {
+						unit: sap.gantt.config.TimeUnit.day,
+						span: 1,
+						range: 90
+					},
+					largeInterval: {
+						unit: sap.gantt.config.TimeUnit.week,
+						span: 1,
+						pattern: "LLL yyyy,'Week' ww"
+					},
+					smallInterval: {
+						unit: sap.gantt.config.TimeUnit.day,
+						span: 1,
+						pattern: "EEE dd"
+					}
+				},
+				"1week": {
+					innerInterval: {
+						unit: sap.gantt.config.TimeUnit.week,
+						span: 1,
+						range: 90
+					},
+					largeInterval: {
+						unit: sap.gantt.config.TimeUnit.month,
+						span: 1,
+						pattern: "LLLL yyyy"
+					},
+					smallInterval: {
+						unit: sap.gantt.config.TimeUnit.week,
+						span: 1,
+						pattern: "'CW' w"
+					}
+				},
+				"1month": {
+					innerInterval: {
+						unit: sap.gantt.config.TimeUnit.month,
+						span: 1,
+						range: 90
+					},
+					largeInterval: {
+						unit: sap.gantt.config.TimeUnit.month,
+						span: 3,
+						pattern: "yyyy, QQQ"
+					},
+					smallInterval: {
+						unit: sap.gantt.config.TimeUnit.month,
+						span: 1,
+						pattern: "LLL"
+					}
+				},
+				"1quarter": {
+					innerInterval: {
+						unit: sap.gantt.config.TimeUnit.month,
+						span: 3,
+						range: 90
+					},
+					largeInterval: {
+						unit: sap.gantt.config.TimeUnit.year,
+						span: 1,
+						pattern: "yyyy"
+					},
+					smallInterval: {
+						unit: sap.gantt.config.TimeUnit.month,
+						span: 3,
+						pattern: "QQQ"
+					}
+				},
+				"1year": {
+					innerInterval: {
+						unit: sap.gantt.config.TimeUnit.year,
+						span: 1,
+						range: 90
+					},
+					largeInterval: {
+						unit: sap.gantt.config.TimeUnit.year,
+						span: 10,
+						pattern: "yyyy"
+					},
+					smallInterval: {
+						unit: sap.gantt.config.TimeUnit.year,
+						span: 1,
+						pattern: "yyyy"
+					}
+				}
+			};
+
+			return new ProportionZoomStrategy({
+				totalHorizon: new TimeHorizon({
+					startTime: "20131228000000",
+					endTime: "20170101000000"
 				}),
-				// specify initHorizon rather than the default one
-				initHorizon: new sap.gantt.config.TimeHorizon({
+				visibleHorizon: new TimeHorizon({
 					startTime: "20161001000000",
 					endTime: "20161201000000"
 				}),
-				zoomStrategy: {
-					"1day": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.day,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.week,
-							span: 1,
-							pattern: "MMM yyyy,'Week' ww"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.day,
-							span: 1,
-							pattern: "EEE dd"
-						}
-					},
-					"1week": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.week,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 1,
-							pattern: "MMMM yyyy"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.week,
-							span: 1,
-							pattern: "'CW' w"
-						}
-					},
-					"1month": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 3,
-							pattern: "yyyy, QQQ"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 1,
-							pattern: "MMM"
-						}
-					},
-					"1quarter": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 3,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 1,
-							pattern: "yyyy"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 3,
-							pattern: "QQQ"
-						}
-					},
-					"1year": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 10,
-							pattern: "yyyy"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 1,
-							pattern: "yyyy"
-						}
-					}
-				},
-				granularity: "1week",
-				finestGranularity:  "1day",
-				coarsestGranularity:  "1year",
-				rate:  1
+				timeLineOptions: oTimeLineOptions,
+				timeLineOption: oTimeLineOptions["1week"],
+				coarsestTimeLineOption: oTimeLineOptions["1year"],
+				finestTimeLineOption: oTimeLineOptions["1day"]
 			});
-
-			return oTimeAxis;
-		},
-		
-		_createTimeAxis1: function() {
-			var oTimeAxis = new sap.gantt.config.TimeAxis({
-				planHorizon: new sap.gantt.config.TimeHorizon({
-					startTime: "20071228000000",
-					endTime: "20270101000000"
-				}),
-				initHorizon: new sap.gantt.config.TimeHorizon({
-					
-				}),
-				zoomStrategy: {
-					"1day": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.day,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.week,
-							span: 1,
-							format: "MMM yyyy,'Week' ww"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.day,
-							span: 1,
-							format: "EEE dd"
-						}
-					},
-					"1week": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.week,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 1,
-							format: "MMMM yyyy"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.week,
-							span: 1,
-							format: "'CW' w"
-						}
-					},
-					"1month": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 3,
-							format: "yyyy, QQQ"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 1,
-							format: "MMM"
-						}
-					},
-					"1quarter": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 3,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 1,
-							format: "yyyy"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.month,
-							span: 3,
-							format: "QQQ"
-						}
-					},
-					"1year": {
-						innerInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 1,
-							range: 90
-						},
-						largeInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 10,
-							format: "yyyy"
-						},
-						smallInterval: {
-							unit: sap.gantt.config.TimeUnit.year,
-							span: 1,
-							format: "yyyy"
-						}
-					}
-				},
-				granularity: "1quarter",
-				finestGranularity:  "1day",
-				coarsestGranularity:  "1year",
-				rate:  1
-			});
-
-			return oTimeAxis;
 		},
 
 		/*
@@ -762,7 +657,7 @@ sap.ui.define([
 		 * @public
 		 * @returns undefined
 		 */
-		createTask: function() {
+		createTask: function () {
 			var oGanttChartContainer = this.getView().byId("GanttChartContainer");
 			var aSelectedRows = oGanttChartContainer.getSelectedRows(0)[0].selectedRows;
 
@@ -773,7 +668,7 @@ sap.ui.define([
 			for (var i = 0; i < aSelectedRows.length; i++) {
 				aIds.push(aSelectedRows[i].id);
 			}
-			setTimeout(function(){
+			setTimeout(function () {
 				oGanttChartContainer.deselectRows(0);
 				oGanttChartContainer.selectRows(0, aIds);//reselect rows
 			}, 300);
@@ -785,11 +680,11 @@ sap.ui.define([
 		 * @param {Array} [aSelectedRows] array contain selected rows
 		 * @returns {Boolean} if one or more tasks selected
 		 */
-		_checkSelectedRow: function(aSelectedRows) {
+		_checkSelectedRow: function (aSelectedRows) {
 			if (aSelectedRows.length >= 1) {
 				return true;
 			} else {
-				MessageToast.show("Please select one or more rows");
+				MessageToast.show("Plase select one or more rows");
 				return false;
 			}
 		},
@@ -800,7 +695,7 @@ sap.ui.define([
 		 * @param {Array} [aSelectedRows] array contain selected rows
 		 * @returns undefined
 		 */
-		_addRows: function(aSelectedRows) {
+		_addRows: function (aSelectedRows) {
 			var oModelData = this._oModel.getData(); //data in model
 			var aTreeData = oModelData.root.children; //data of root level
 
@@ -819,8 +714,8 @@ sap.ui.define([
 		 * @param {String} [sId] id of selected row
 		 * @returns undefined
 		 */
-		_addRow: function(aTreeNodes, sId) {
-			if (!aTreeNodes || !aTreeNodes.length){
+		_addRow: function (aTreeNodes, sId) {
+			if (!aTreeNodes || !aTreeNodes.length) {
 				return;
 			}
 
@@ -830,7 +725,7 @@ sap.ui.define([
 
 				//find object of corresponding sId and add a new object
 				if (oNode.id === sId) {
-					var oNewNode = $.extend(true, {}, oNode);//deep copy oNode
+					var oNewNode = jQuery.extend(true, {}, oNode);//deep copy oNode
 					oNewNode.id = oNode.id + " - Copy" + Math.floor((Math.random() * 1000) + 1);
 					oNewNode.name = oNode.name + " - Copy";
 					oNewNode.order[0].id = oNewNode.order[0].id + " - Copy" + Math.floor((Math.random() * 1000) + 1);
@@ -838,7 +733,7 @@ sap.ui.define([
 					return;
 				}
 
-				if (aChildNodes && aChildNodes.length > 0){
+				if (aChildNodes && aChildNodes.length > 0) {
 					this._addRow(aChildNodes, sId);
 				}
 			}
@@ -849,7 +744,7 @@ sap.ui.define([
 		 * @public
 		 * @returns undefined
 		 */
-		deleteTask: function() {
+		deleteTask: function () {
 			var oGanttChartContainer = this.getView().byId("GanttChartContainer");
 			var aSelectedRows = oGanttChartContainer.getSelectedRows(1)[0].selectedRows;
 
@@ -864,7 +759,7 @@ sap.ui.define([
 		 * @private
 		 *@returns undefined
 		 */
-		_clearSelection: function() {
+		_clearSelection: function () {
 			var oGanttChartContainer = this.getView().byId("GanttChartContainer");
 
 			oGanttChartContainer.deselectRows(oGanttChartContainer.getSelectedRows(0));
@@ -876,7 +771,7 @@ sap.ui.define([
 		 * @param {Array} [aSelectedRows] array contain selected rows
 		 * @returns undefined
 		 */
-		_deleteRows: function(aSelectedRows) {
+		_deleteRows: function (aSelectedRows) {
 			var oModelData = this._oModel.getData(); //data in model
 			var aTreeData = oModelData.root.children; //data of root level
 
@@ -895,8 +790,8 @@ sap.ui.define([
 		 * @param {String} [sId] id of selected row
 		 * @returns undefined
 		 */
-		_deleteRow: function(aTreeNodes, sId) {
-			if (!aTreeNodes || !aTreeNodes.length){
+		_deleteRow: function (aTreeNodes, sId) {
+			if (!aTreeNodes || !aTreeNodes.length) {
 				return;
 			}
 
@@ -910,7 +805,7 @@ sap.ui.define([
 					return;
 				}
 
-				if (aChildNodes && aChildNodes.length > 0){
+				if (aChildNodes && aChildNodes.length > 0) {
 					this._deleteRow(aChildNodes, sId);
 				}
 			}
