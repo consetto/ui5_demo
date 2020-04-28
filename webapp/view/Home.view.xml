@@ -147,7 +147,7 @@
 					backgroundColorShade="ShadeA"
 					width="3">
 					<Table
-						items="{path:'customer>/customers', templateShareable: false}"
+						items="{path:'project>/Projects', templateShareable: false}"
 						fixedLayout="false">
 						<headerToolbar>
 							<Toolbar design="Transparent">
@@ -173,12 +173,12 @@
 							<items>
 								<ColumnListItem>
 									<cells>
-										<Text text="{customer>name}"/>
-										<Text text="{customer>Task}"/>
+										<Text text="{project>name}"/>
+										<Text text="{project>Task}"/>
 										<ObjectNumber
-											number="{customer>Status }"
-											state="{customer>state}"/>
-										<Text text="{customer>Deadline}"/>
+											number="{project>Status }"
+											state="{project>state}"/>
+										<Text text="{project>Deadline}"/>
 									</cells>
 								</ColumnListItem>
 							</items>

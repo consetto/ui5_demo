@@ -60,9 +60,9 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/alerts.json"
 			},
-			"customer": {
+			"project": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/customers.json"
+				"uri": "model/projects.json"
 			},
 			"process": {
 				"type": "sap.ui.model.json.JSONModel",
