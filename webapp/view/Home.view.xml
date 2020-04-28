@@ -136,10 +136,10 @@
 						<Text
 							text="{i18n>FinancialDashboardContent}"
 							class="sapUiTinyMarginBottom"/>
-					<!--	<Link
+						<Link
 							text="{i18n>accessLink}"
 							press="handleLinkPressFinancialDashboard"
-							tooltip="{i18n>accessSocialLink}"/>-->
+							tooltip="{i18n>accessSocialLink}"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
