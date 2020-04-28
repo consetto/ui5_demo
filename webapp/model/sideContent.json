@@ -14,14 +14,6 @@
 			"expanded": true,
 			"key": "statistics",
 			"items": [
-				{
-					"title": "Usage Statistics",
-					"key": "Usage Statistics was pressed"
-				},
-				{
-					"title": "Order Statistics",
-					"key": "Order Statistics was pressed"
-				}
 			]
 		},
 				{
@@ -38,7 +30,7 @@
 			"key": "LearnMore",
 			"items": [
 				{
-					"title": "UI5",
+					"title": "SAPUI5",
 					"key": "UI5"
 				},
 				{
