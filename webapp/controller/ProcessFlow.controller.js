@@ -5,12 +5,8 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.toolpageapp.controller.ProcessFlow", {
-/*
-		onNavButtonPressed: function() {
-			this.getOwnerComponent().getRouter().navTo("home");
-		},*/
-		
-				onNavButtonPressed: function (oEvent) {
+
+		onNavButtonPressed: function (oEvent) {
 			var oHistory, sPreviousHash;
 	        oHistory = sap.ui.core.routing.History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();

@@ -8,18 +8,6 @@ sap.ui.define([
 	return BaseController.extend("sap.ui.demo.toolpageapp.controller.Launchpad", {
 		formatter: formatter,
 
-		/*onInit: function () {
-			var oViewModel = new JSONModel({
-					currentUser: "Administrator",
-					lastLogin: new Date(Date.now() - 86400000)
-				});
-
-			this.setModel(oViewModel, "view");
-			var oModel = new sap.ui.model.json.JSONModel();
-            oModel.loadData("model/Contacts.json"); 
-			this.getView().setModel(oModel);
-		
-		},*/
 			onInit: function() {
 			var sDataPath = jQuery.sap.getModulePath("sap.ui.demo.toolpageapp.model.data", "/News.json");
 			var oModel = new JSONModel(sDataPath);
