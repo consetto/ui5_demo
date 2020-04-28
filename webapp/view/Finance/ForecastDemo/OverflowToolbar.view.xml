@@ -6,12 +6,12 @@
 			<Table id="idHeagTable1" showNoData="false">
 				<headerToolbar>
 					<OverflowToolbar id="otbSubheader">
-						<Button text="Gesellschaft auswählen" press="handleOpenDialog" icon="sap-icon://filter-fields"/>
+						<Button text="Choose Company" press="handleOpenDialog" icon="sap-icon://filter-fields"/>
 						<ToolbarSpacer/>
 						<SearchField id="month" liveChange="onFilter">
 							<layoutData><OverflowToolbarLayoutData minWidth="200px" maxWidth="300px" shrinkable="true"/></layoutData>
 						</SearchField>
-						<Button text="Zurücksetzen" type="Transparent" press="onReset"/>
+						<Button text="Reset" type="Transparent" press="onReset"/>
 						<OverflowToolbarButton type="Transparent" text="Sort" icon="sap-icon://sort" press="onSort"/>
 						<OverflowToolbarButton type="Transparent" text="Group" icon="sap-icon://group-2" press="onGroup"/>
 					</OverflowToolbar>
@@ -20,11 +20,11 @@
 					<Column width="12em">
 						<header><Text text=""/></header>
 					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="Heiztage"/></Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left" width="30%"><Text text="Außentemp an Heiztagen"/></Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left" width="24%"><Text text="Gasverbrauch"/>
+					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="Heating days	"/></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left" width="30%"><Text text="Outside temperature on heating days"/></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="left" width="24%"><Text text="Gas used"/>
 					</Column>
-					<Column width="20%" hAlign="left"><Text text="Kosten Forecast"/></Column>
+					<Column width="20%" hAlign="left"><Text text="Expense forecast"/></Column>
 				</columns>
 			</Table>
 			<Table id="idHeagTable" items="{/HeagCollection}">
@@ -32,7 +32,7 @@
 					<Column width="12em">
 						<header><Text text=""/></header>
 						<footer>
-							<Text text="Summe"/>
+							<Text text="Sum"/>
 						</footer>
 					</Column>
 					<Column minScreenWidth="Tablet" demandPopin="true"><Text text="[d]"/></Column>

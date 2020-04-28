@@ -5,9 +5,9 @@
                 <custom:content>
                     <RadioButtonGroup columns="3">
                         <buttons>
-                            <RadioButton text="Gesellschaft Nord" id="Nord" select="onSelect"/>
-                            <RadioButton text="Gesellschaft SüdWest" id="SudWest" select="onSelect"/>
-                            <RadioButton text="Gesellschaft Ost" id="Ost" select="onSelect"/>
+                            <RadioButton text="Company North" id="Nord" select="onSelect"/>
+                            <RadioButton text="Company SouthWest" id="SudWest" select="onSelect"/>
+                            <RadioButton text="Company East" id="Ost" select="onSelect"/>
                         </buttons>
                     </RadioButtonGroup>
                 </custom:content>

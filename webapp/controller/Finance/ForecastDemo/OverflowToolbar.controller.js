@@ -22,7 +22,7 @@ sap.ui.define([
 			this.bGrouped = false;
 			this.bDescending = false;
 			this.sSearchQuery = 0;
-			this.sGesellschaft = "Gesellschaft Nord";
+			this.sGesellschaft = "Company North";
 			this.fnApplyFiltersAndOrdering();
 			this._oViewModelNord = new JSONModel({
 				sumK: 0,
@@ -139,13 +139,13 @@ sap.ui.define([
 		onOK: function(oEvent) {
 			this.fnApplyFiltersAndOrdering();
 			switch (this.sGesellschaft) {
-				case "Gesellschaft Nord":
+				case "Company North":
 					this.getView().setModel(this._oViewModelNord, "localModel");
 					break;
-				case "Gesellschaft SüdWest":
+				case "Company SouthWest":
 					this.getView().setModel(this._oViewModelSud, "localModel");
 					break;
-				case "Gesellschaft Ost":
+				case "Company East":
 					this.getView().setModel(this._oViewModelOst, "localModel");
 					break;
 				default:
@@ -176,13 +176,13 @@ sap.ui.define([
 			oPersonalizationDialog.setTitle("Gesellschaft");
 			oPersonalizationDialog.open();
 			switch (this.sGesellschaft) {
-				case "Gesellschaft Nord":
+				case "Company North":
 					sap.ui.getCore().byId("Nord").setSelected(true);
 					break;
-				case "Gesellschaft SüdWest":
+				case "Company SouthWest":
 					sap.ui.getCore().byId("SudWest").setSelected(true);
 					break;
-				case "Gesellschaft Ost":
+				case "Company East":
 					sap.ui.getCore().byId("Ost").setSelected(true);
 					break;
 				default:
