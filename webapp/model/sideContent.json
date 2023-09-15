@@ -30,17 +30,10 @@
 			"key": "LearnMore",
 			"items": [
 				{
-					"title": "SAPUI5",
-					"key": "UI5"
-				},
-				{
-					"title": "ABAP",
-					"key": "ABAP"
-				},
-					{
-					"title": "Enterprise Planning",
-					"key": "EnterprisePlanning"
+					"title": "About Consetto",
+					"key": "Consetto"
 				}
+		
 			]
 		}
 	],

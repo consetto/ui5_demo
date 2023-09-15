@@ -17,7 +17,7 @@ sap.ui.define([
 	'sap/ui/Device',
 	'sap/ui/core/syncStyleClass',
 	'sap/m/library'
-], function(
+], function (
 	BaseController,
 	Fragment,
 	Controller,
@@ -52,7 +52,7 @@ sap.ui.define([
 
 		_bExpanded: true,
 
-		onInit: function() {
+		onInit: function () {
 			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 
 			// if the app starts on desktop devices with small or meduim screen size, collaps the sid navigation
@@ -77,37 +77,30 @@ sap.ui.define([
 		 * @public
 		 * @param {sap.ui.base.Event} oEvent The item select event
 		 */
-		onItemSelect: function(oEvent) {
+		onItemSelect: function (oEvent) {
 			var lang = sap.ui.getCore().getConfiguration().getLanguage().substring(0, 2);
-			var oItem = oEvent.getParameter('item');  
+			var oItem = oEvent.getParameter('item');
 			var sKey = oItem.getKey();
 			// if you click on home, settings or statistics button, call the navTo function
-			if ((sKey === "home" || sKey === "statistics"|| sKey === "Launchpad"|| sKey ==="LearnMore")) {
+			if ((sKey === "home" || sKey === "statistics" || sKey === "Launchpad" || sKey === "LearnMore")) {
 				// if the device is phone, collaps the navigation side of the app to give more space
 				if (Device.system.phone) {
 					this.onSideNavButtonPress();
 				}
 				this.getRouter().navTo(sKey);
-			} else if (sKey === "UI5")
-		{	
-			window.open("https://consetto.com/"+lang+"/leistungen/enterprise-apps/","_blank");}
-			else if (sKey === "ABAP")
-			{	window.open("https://consetto.com/"+lang+"/leistungen/abap-entwicklung/","_blank");}
-				else if(sKey === "EnterprisePlanning")
-			{	window.open("https://consetto.com/"+lang+"/leistungen/enterprise-planning/","_blank");}		
-				else if(sKey === "Imprint")
-			{	window.open("https://consetto.com/"+lang+"/impressum/","_blank");}	
-		
-				
-			else{
-				MessageToast.show(sKey);
+			} else if (sKey === "Imprint") { window.open("https://consetto.com/impressum", "_blank"); }
+
+
+			else {
+
+				window.open("https://consetto.com/#", "_blank");
 			}
 		},
-		
-		
-		
 
-		onUserNamePress: function(oEvent) {
+
+
+
+		onUserNamePress: function (oEvent) {
 			var oBundle = this.getModel("i18n").getResourceBundle();
 			// close message popover
 			var oMessagePopover = this.byId("errorMessagePopover");
@@ -165,11 +158,11 @@ sap.ui.define([
 				}).then(function (oQuickView) {
 					this._oQuickView = oQuickView;
 					this._configEmployeeQuickView(oModel);
-					this._oQuickView.openBy(oButton,sap.m.PlacementType.Left);
+					this._oQuickView.openBy(oButton, sap.m.PlacementType.Left);
 				}.bind(this));
 			} else {
 				this._configEmployeeQuickView(oModel);
-				this._oQuickView.openBy(oButton,sap.m.PlacementType.Left);
+				this._oQuickView.openBy(oButton, sap.m.PlacementType.Left);
 			}
 
 		},
@@ -179,14 +172,14 @@ sap.ui.define([
 			this._oQuickView.setModel(oModel);
 		},
 
-		onSideNavButtonPress: function() {
+		onSideNavButtonPress: function () {
 			var oToolPage = this.byId("app");
 			var bSideExpanded = oToolPage.getSideExpanded();
 			this._setToggleButtonTooltip(bSideExpanded);
 			oToolPage.setSideExpanded(!oToolPage.getSideExpanded());
 		},
 
-		_setToggleButtonTooltip : function(bSideExpanded) {
+		_setToggleButtonTooltip: function (bSideExpanded) {
 			var oToggleButton = this.byId('sideNavigationToggleButton');
 			if (bSideExpanded) {
 				oToggleButton.setTooltip('Large Size Navigation');
@@ -236,7 +229,7 @@ sap.ui.define([
 			var oNotificationPopover = new ResponsivePopover(this.getView().createId("notificationMessagePopover"), {
 				title: oBundle.getText("notificationTitle"),
 				contentWidth: "300px",
-				endButton : oButton,
+				endButton: oButton,
 				placement: PlacementType.Bottom,
 				content: {
 					path: 'alerts>/alerts/notifications',
@@ -280,10 +273,10 @@ sap.ui.define([
 					var oBundle = this.getModel("i18n").getResourceBundle();
 					MessageToast.show(oBundle.getText("notificationItemClickedMessage", oBindingObject.title));
 				},
-				customData : [
+				customData: [
 					new CustomData({
-						key : "path",
-						value : oBindingContext.getPath()
+						key: "path",
+						value: oBindingContext.getPath()
 					})
 				]
 			});
@@ -294,7 +287,7 @@ sap.ui.define([
 			var oBindingObject = oBindingContext.getObject();
 			var oLink = new Link("moreDetailsLink", {
 				text: "More Details",
-				press: function() {
+				press: function () {
 					MessageToast.show("More Details was pressed");
 				}
 			});
